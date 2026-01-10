@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoftBridge Labs | Engineering the Future of Software & Gaming</title>
+    <title>SoftBridge Labs | Engineering the Future of Software & AI</title>
     <meta name="description"
-        content="SoftBridge Labs (formerly ProTec Games) specializes in high-performance software, immersive mobile gaming, and robust developer tools. Explore our next-gen ecosystem.">
+        content="SoftBridge Labs (formerly ProTec Games) specializes in high-performance software, immersive mobile ai, and robust developer tools. Explore our next-gen ecosystem.">
     <meta name="keywords"
         content="SoftBridge Labs, ProTec Games, software engineering, mobile games, developer tools, HTML Editor PRO, open source, tech innovation">
     <meta name="author" content="SoftBridge Labs">
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://softbridgelabs.com/">
     <meta property="og:title" content="SoftBridge Labs | Engineering the Future">
     <meta property="og:description"
-        content="Next-gen software and immersive gaming experiences. Discover our full ecosystem of products and open-source projects.">
+        content="Next-gen software and immersive AI experiences. Discover our full ecosystem of products and open-source projects.">
     <meta property="og:image" content="https://softbridgelabs.com/assets/og-image.jpg">
 
     <!-- Twitter -->
@@ -25,7 +25,7 @@
     <meta property="twitter:url" content="https://softbridgelabs.com/">
     <meta property="twitter:title" content="SoftBridge Labs | Engineering the Future">
     <meta property="twitter:description"
-        content="Next-gen software and immersive gaming experiences. Discover our full ecosystem of products and open-source projects.">
+        content="Next-gen software and immersive AI experiences. Discover our full ecosystem of products and open-source projects.">
     <meta property="twitter:image" content="https://softbridgelabs.com/assets/og-image.jpg">
 
     <link rel="icon" type="image/png" href="/assets/favicon.ico">
@@ -37,11 +37,13 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="/">SoftBridge <span class="labs">LABS</span></a></div>
+            <div class="logo"><a href="/">SoftBridge <span class="labs">Labs</span></a></div>
             <div class="nav-right">
                 <div class="desktop-links">
                     <a href="/about">About</a>
-                    <a href="/programs">Programs</a>
+                    <a href="/products">Products</a>
+                    <a href="/devtools">Dev Tools</a>
+                    <a href="/blog">Blog</a>
                     <a href="/legal">Legal</a>
                 </div>
                 <button id="waffle-btn" class="icon-btn">
@@ -56,12 +58,14 @@
 
     <div id="mobile-sidebar" class="sidebar">
         <div class="sidebar-header">
-            <span class="logo">SOFTBRIDGE</span>
+            <span class="logo">SoftBridge</span>
             <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
         </div>
         <nav class="sidebar-links">
             <a href="/about">About</a>
-            <a href="/programs">Programs</a>
+            <a href="/products">Products</a>
+            <a href="/devtools">Dev Tools</a>
+            <a href="/blog">Blog</a>
             <a href="/legal">Legal</a>
         </nav>
     </div>
@@ -83,9 +87,9 @@
         </div>
         <div class="hero-content">
             <h1 class="hero-title">Engineering the <span class="gradient">Bridge</span></h1>
-            <p class="hero-subtitle">Next-gen software and immersive gaming experiences.</p>
+            <p class="hero-subtitle">Next-gen software and immersive AI experiences.</p>
             <div class="hero-btns">
-                <a href="https://play.google.com/store/apps/dev?id=8237023983569180393" class="btn-black">Portfolio</a>
+                <a href="/products/" class="btn-black">View Products</a>
                 <a href="https://github.com/ProTecGames" class="btn-white">GitHub</a>
             </div>
         </div>
@@ -127,7 +131,7 @@
                     <p>Maintaining a vibrant ecosystem of Python and JS projects on GitHub.</p>
                 </div>
                 <div class="bento-card large">
-                    <h3>Gaming Mastery</h3>
+                    <h3>AI Mastery</h3>
                     <p>Formerly ProTec Games, we've mastered the art of immersive mobile entertainment across multiple
                         genres.</p>
                 </div>
@@ -141,29 +145,35 @@
             <div
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; animation: fadeInUp 0.8s ease forwards;">
                 <div
-                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.1s both;">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🌐</div>
-                    <h3 style="color: var(--black); margin-bottom: 12px;">Explore</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Discover our full ecosystem of products
-                        and open-source projects.</p>
-                    <a href="/programs" class="btn-black" style="display: inline-block;">View Portfolio</a>
+                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.1s both; display: flex; flex-direction: column;">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🔬</div>
+                    <h3 style="color: var(--black); margin-bottom: 12px;">Insights</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; flex-grow: 1;">Technical deep-dives and
+                        engineering updates from our software laboratory.</p>
+                    <div style="margin-top: auto;">
+                        <a href="/blog" class="btn-black" style="display: inline-block;">Read Blog</a>
+                    </div>
                 </div>
                 <div
-                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.2s both;">
+                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.2s both; display: flex; flex-direction: column;">
                     <div style="font-size: 2.5rem; margin-bottom: 16px;">📚</div>
                     <h3 style="color: var(--black); margin-bottom: 12px;">Learn</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Get to know our mission, values, and the
+                    <p style="color: var(--text-muted); margin-bottom: 20px; flex-grow: 1;">Get to know our mission,
+                        values, and the
                         people behind the bridge.</p>
-                    <a href="/about" class="btn-black" style="display: inline-block;">About Us</a>
+                    <div style="margin-top: auto;">
+                        <a href="/about" class="btn-black" style="display: inline-block;">About Us</a>
+                    </div>
                 </div>
                 <div
-                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.3s both;">
-                    <div style="font-size: 2.5rem; margin-bottom: 16px;">💼</div>
-                    <h3 style="color: var(--black); margin-bottom: 12px;">Contribute</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">Join our community and contribute to
-                        open-source development.</p>
-                    <a href="https://github.com/ProTecGames" class="btn-black" target="_blank"
-                        style="display: inline-block;">Visit GitHub</a>
+                    style="background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.3s both; display: flex; flex-direction: column;">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🛠️</div>
+                    <h3 style="color: var(--black); margin-bottom: 12px;">Toolkits</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; flex-grow: 1;">Explore our professional
+                        SDKs, utilities, and open-source contributions.</p>
+                    <div style="margin-top: auto;">
+                        <a href="/devtools" class="btn-black" style="display: inline-block;">View Tools</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,11 +185,12 @@
         </div>
 
         <div class="social-bar">
-            <a href="https://www.facebook.com/104285095385232" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/softbridge.labs/" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/mwlite/company/softbridge.labs" target="_blank">LinkedIn</a>
-            <a href="https://www.x.com/softbridge.labs" target="_blank">X (Twitter)</a>
-            <a href="https://www.youtube.com/@softbridge.labs" target="_blank">YouTube</a>
+            <a href="https://www.facebook.com/104285095385232" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/softbridge.labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/mwlite/company/softbridge.labs" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.x.com/softbridge.labs" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            <a href="https://www.youtube.com/@softbridge.labs" target="_blank" rel="noopener noreferrer">YouTube</a>
         </div>
 
         <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>

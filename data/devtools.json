@@ -1,0 +1,26 @@
+[
+    {
+        "name": "GitLook",
+        "icon": "",
+        "url": "https://gitlook-ai.vercel.app/",
+        "description": "Gemini and GitHub API based platform that provides a detailed report and 20 quiz on your GitHub profile"
+    },
+    {
+        "name": "SafeMe",
+        "icon": "https://pypi.org/static/images/logo-small.8998e9d1.svg",
+        "url": "https://pypi.org/project/SafeMe",
+        "description": "One-command backend Linux server security: firewall, SSH hardening, DDoS protection, integrity checks and more."
+    },
+    {
+        "name": "ChiX - C Language Editor",
+        "icon": "https://raw.githubusercontent.com/PrakharDoneria/ChiX/refs/heads/main/generated-icon.png",
+        "url": "https://github.com/PrakharDoneria/ChiX/releases/tag/build-90f3b33",
+        "description": "Python based C Code Editor that uses GCC to run code in windows terminal"
+    },
+    {
+        "name": "GF Model",
+        "icon": "https://pypi.org/static/images/logo-small.8998e9d1.svg",
+        "url": "https://pypi.org/project/gfmodel/",
+        "description": "A simple Python client for the GitHub Models API. This package provides an easy-to-use interface to interact with GitHub's free, OpenAI-compatible inference API, allowing you to integrate large language models into your projects with a GitHub Personal Access Token (PAT) instead of a paid API key."
+    }
+]

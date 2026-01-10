@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SoftBridge Labs</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .article-hero {
+            padding: 180px 24px 100px;
+            background: var(--accent-light);
+            text-align: center;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: -60px auto 100px;
+            background: white;
+            padding: 60px;
+            border-radius: 32px;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-content {
+            line-height: 1.8;
+            color: var(--text);
+            font-size: 1.2rem;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            margin: 40px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            border-radius: 16px;
+            margin: 32px 0;
+        }
+
+        .article-content pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 32px;
+            border-radius: 16px;
+            overflow-x: auto;
+            margin: 32px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .article-meta-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 32px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            color: var(--accent);
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px;
+            gap: 20px;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--accent-light);
+            border-top: 4px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-container {
+                margin: -40px 16px 60px;
+                padding: 32px;
+            }
+
+            .article-hero {
+                padding-top: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="/">SoftBridge <span class="labs">Labs</span></a></div>
+            <div class="nav-right">
+                <div class="desktop-links">
+                    <a href="/about">About</a>
+                    <a href="/products">Products</a>
+                    <a href="/devtools">Dev Tools</a>
+                    <a href="/blog" class="active">Blog</a>
+                    <a href="/legal">Legal</a>
+                </div>
+                <button id="waffle-btn" class="icon-btn">
+                    <span class="material-symbols-outlined">apps</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">SoftBridge</span>
+            <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <nav class="sidebar-links">
+            <a href="/about">About</a>
+            <a href="/products">Products</a>
+            <a href="/devtools">Dev Tools</a>
+            <a href="/blog" class="active">Blog</a>
+            <a href="/legal">Legal</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <div id="apps-panel" class="apps-overlay">
+        <div class="overlay-content">
+            <p class="overlay-label">ECOSYSTEM</p>
+            <div id="product-container" class="bento-grid"></div>
+        </div>
+    </div>
+
+    <div id="article-view">
+        <section class="article-hero">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h1 id="article-title" class="hero-title"
+                    style="font-size: clamp(2.5rem, 8vw, 4.5rem); min-height: 1.2em;">Loading...</h1>
+            </div>
+        </section>
+
+        <main class="article-container">
+            <a href="/blog" class="back-to-blog">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Back to Blog
+            </a>
+
+            <div id="loading-state" class="loading-container">
+                <div class="spinner"></div>
+                <p>Decoding laboratory data...</p>
+            </div>
+
+            <article id="article-body" class="article-content" style="display: none;">
+                <!-- Content will be injected here -->
+            </article>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-branding">
+            <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
+        </div>
+        <div class="social-bar">
+            <a href="https://www.facebook.com/104285095385232" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/softbridge.labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/mwlite/company/softbridge.labs" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.x.com/softbridge.labs" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            <a href="https://www.youtube.com/@softbridge.labs" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+        <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const articleId = params.get('id');
+
+            if (!articleId) {
+                window.location.href = '/blog';
+                return;
+            }
+
+            fetch(`https://dev.to/api/articles/${articleId}`)
+                .then(res => res.json())
+                .then(article => {
+                    document.title = `${article.title} | SoftBridge Labs Blog`;
+                    document.getElementById('article-title').textContent = article.title;
+
+                    const articleBody = document.getElementById('article-body');
+                    articleBody.innerHTML = article.body_html;
+
+                    document.getElementById('loading-state').style.display = 'none';
+                    articleBody.style.display = 'block';
+                    articleBody.style.animation = 'fadeInUp 0.8s ease forwards';
+                })
+                .catch(err => {
+                    document.getElementById('loading-state').innerHTML = '<p>Error: Laboratory data corrupted.</p>';
+                });
+        });
+    </script>
+</body>
+
+</html>

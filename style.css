@@ -12,6 +12,12 @@
     --hover-bg: #f5f3ff;
 }
 
+.desktop-links a.active,
+.sidebar-links a.active {
+    color: var(--accent) !important;
+    font-weight: 700;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -147,18 +153,7 @@ body {
     }
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-}
+/* BASE STYLES REMOVED REDUNDANTLY - HANDLED IN TOP BLOCK */
 
 .navbar {
     height: 70px;
@@ -386,48 +381,52 @@ body {
 .hero-bg-wrapper::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    height: 70%;
+    bottom: 0;
     background: linear-gradient(to bottom,
             rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.1) 20%,
-            rgba(255, 255, 255, 0.3) 40%,
-            rgba(255, 255, 255, 0.5) 55%,
-            rgba(255, 255, 255, 0.7) 70%,
-            rgba(255, 255, 255, 0.85) 85%,
-            rgba(255, 255, 255, 1) 100%);
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.2) 60%,
+            rgba(255, 255, 255, 0.4) 75%,
+            rgba(255, 255, 255, 0.7) 85%,
+            rgba(255, 255, 255, 0.9) 95%,
+            var(--bg) 100%);
     pointer-events: none;
+    z-index: 2;
 }
 
 .hero-video {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.hero-video.loaded {
+    opacity: 1;
 }
 
 .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-@media (min-width: 1024px) {
-    .hero-video {
-        display: block;
-    }
-
-    .hero-img {
-        display: none;
-    }
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .badge {
@@ -560,6 +559,7 @@ body {
     right: 24px;
     width: 380px;
     max-width: calc(100vw - 48px);
+    max-height: 80vh;
     background: white;
     border: 1px solid var(--border);
     border-radius: 20px;
@@ -568,6 +568,36 @@ body {
     display: none;
     z-index: 1100;
     backdrop-filter: blur(10px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.apps-overlay::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.view-all-tray {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    background: var(--accent-light);
+    color: var(--accent);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.view-all-tray:hover {
+    background: var(--accent);
+    color: white;
 }
 
 .apps-overlay.active {
@@ -634,13 +664,17 @@ body {
 }
 
 .product-card img {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    margin-bottom: 8px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 15px;
+    margin-bottom: 12px;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    background: white;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .product-card:hover img {
@@ -662,16 +696,17 @@ body {
 }
 
 .product-card h3 {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text);
-    font-weight: 600;
-    margin-top: 8px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
 }
 
 /* STATS SECTION */
 .stats-section {
     padding: 70px 24px;
-    background: linear-gradient(to bottom, #fafafa 0%, var(--bg) 100%);
+    background: var(--bg);
 }
 
 .stats-grid {
@@ -1021,9 +1056,15 @@ body {
     }
 
     .apps-overlay {
-        width: calc(100% - 48px);
-        right: 24px;
-        top: 70px;
+        width: calc(100% - 32px);
+        right: 16px;
+        top: 64px;
+        padding: 20px;
+    }
+
+    .apps-overlay .bento-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px;
     }
 
     .bento-grid {

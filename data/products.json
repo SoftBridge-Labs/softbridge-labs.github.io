@@ -1,12 +1,20 @@
 [
   {
-    "name": "GitHub Repo",
-    "icon": "https://cdn-icons-png.flaticon.com/512/25/25231.png",
-    "url": "https://github.com/ProTecGames"
+    "name": "HTML Editor PRO - with AI",
+    "icon": "/assets/logo/html-editor-pro.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.protecgames.htmleditorpro",
+    "description": "Explore endless possibilities of Web Development in Android with HTML Editor Pro."
   },
   {
-    "name": "Play Store",
-    "icon": "https://cdn-icons-png.flaticon.com/512/888/888841.png",
-    "url": "https://play.google.com/store/apps/dev?id=8237023983569180393"
+    "name": "Karbon Sites",
+    "icon": "/assets/logo/karbon-sites.jpg",
+    "url": "https://www.karbonsites.space/",
+    "description": "Go beyond static snippets. Generate, refine, and deploy entire web projects with AI in a powerful and intuitive editor."
+  },
+  {
+    "name": "VerboVisions - AI Image Generator",
+    "icon": "/assets/logo/verbovisions.png",
+    "url": "https://play.google.com/store/apps/details?id=com.protecgames.verbovisions",
+    "description": "Transform your words into captivating visuals with VerboVisons."
   }
 ]

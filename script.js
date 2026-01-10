@@ -94,12 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(data => {
             if (productContainer) {
-                productContainer.innerHTML = data.map((p, index) => `
-                    <a href="${p.url}" class="product-card" style="animation-delay: ${index * 0.1}s">
+                const limitedData = data.slice(0, 6);
+                productContainer.innerHTML = limitedData.map((p, index) => `
+                    <a href="${p.url}" class="product-card" target="_blank" rel="noopener noreferrer" style="animation-delay: ${index * 0.1}s">
                         <img src="${p.icon}" alt="${p.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
                         <h3>${p.name}</h3>
                     </a>
                 `).join('');
+
+                if (data.length > 6) {
+                    const viewAllBtn = document.createElement('a');
+                    viewAllBtn.href = '/products';
+                    viewAllBtn.className = 'view-all-tray';
+                    viewAllBtn.textContent = 'View All Products';
+                    productContainer.parentNode.appendChild(viewAllBtn);
+                }
             }
         })
         .catch(() => {
@@ -149,5 +158,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => ripple.remove(), 600);
         });
+    });
+
+    // Handle Hero Video Loading for mobile and desktop
+    const heroVideos = document.querySelectorAll('.hero-video');
+    heroVideos.forEach(video => {
+        // If video is already loaded
+        if (video.readyState >= 3) {
+            video.classList.add('loaded');
+            video.play().catch(() => { });
+        }
+
+        video.addEventListener('canplaythrough', () => {
+            video.classList.add('loaded');
+            video.play().catch(() => { });
+        });
+
+        // Fallback: forcefully check after 2 seconds
+        setTimeout(() => {
+            if (!video.classList.contains('loaded') && video.readyState >= 1) {
+                video.classList.add('loaded');
+                video.play().catch(() => { });
+            }
+        }, 2000);
     });
 });
