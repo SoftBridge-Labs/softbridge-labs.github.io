@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SoftBridge Labs - Our Mission and Journey</title>
+    <meta name="description"
+        content="Discover the story of SoftBridge Labs. From our roots in ProTec Games to our future in precision-engineered software solutions and community-driven innovation.">
+    <meta name="keywords"
+        content="SoftBridge Labs mission, ProTec Games history, software innovation team, tech values, SoftBridge journey">
+    <meta name="author" content="SoftBridge Labs">
+    <link rel="canonical" href="https://softbridgelabs.com/about/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://softbridgelabs.com/about/">
+    <meta property="og:title" content="About Us | SoftBridge Labs">
+    <meta property="og:description"
+        content="Building the bridge between users and meaningful digital experiences. Learn about our mission and journey.">
+    <meta property="og:image" content="https://softbridgelabs.com/assets/og-image.jpg">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="/">SOFTBRIDGE <span class="labs">LABS</span></a></div>
+            <div class="nav-right">
+                <div class="desktop-links">
+                    <a href="/about">About</a>
+                    <a href="/programs">Programs</a>
+                    <a href="/legal">Legal</a>
+                </div>
+                <button id="waffle-btn" class="icon-btn">
+                    <span class="material-symbols-outlined">apps</span>
+                </button>
+                <button id="mobile-toggle" class="mobile-toggle icon-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">SOFTBRIDGE</span>
+            <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <nav class="sidebar-links">
+            <a href="/about">About</a>
+            <a href="/programs">Programs</a>
+            <a href="/legal">Legal</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <div id="apps-panel" class="apps-overlay">
+        <div class="overlay-content">
+            <p class="overlay-label">ECOSYSTEM</p>
+            <div id="product-container" class="bento-grid"></div>
+        </div>
+    </div>
+
+    <section class="hero hero-small">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/about.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/about.jpg" alt="About SoftBridge" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <div class="badge">OUR STORY</div>
+            <h1 class="hero-title">Building the <span style="color: var(--accent);">Bridge.</span></h1>
+            <p class="hero-subtitle">Discover our mission, values, and journey from ProTec Games to SoftBridge Labs.</p>
+        </div>
+    </section>
+
+    <main class="about-content">
+        <section class="story-section">
+            <h2 class="section-title">Our Mission</h2>
+            <p class="hero-subtitle">SoftBridge Labs represents our evolution from a dedicated gaming studio into a
+                multi-disciplinary software laboratory. We build the infrastructure that connects users to meaningful
+                digital experiences through precision-engineered solutions.</p>
+
+            <div class="values-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-top: 60px;">
+                <div class="value-card"
+                    style="padding: 40px; background: var(--accent-light); border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08); transition: all 0.3s ease; animation: fadeInUp 0.8s ease forwards;">
+                    <h3 style="color: var(--accent); margin-bottom: 12px; font-size: 1.3rem;">Innovation</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Pushing boundaries with cutting-edge
+                        technology and forward-thinking design.</p>
+                </div>
+                <div class="value-card"
+                    style="padding: 40px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.1s both;">
+                    <h3 style="color: var(--text); margin-bottom: 12px; font-size: 1.3rem;">Reliability</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Building trust through robust, scalable
+                        solutions that stand the test of time.</p>
+                </div>
+                <div class="value-card"
+                    style="padding: 40px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.2s both;">
+                    <h3 style="color: var(--text); margin-bottom: 12px; font-size: 1.3rem;">Simplicity</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7;">Creating elegant solutions that are intuitive
+                        and accessible to everyone.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline" style="margin-top: 100px;">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 40px;">Our Journey</h2>
+            <div class="timeline-item" style="animation: fadeInUp 0.8s ease forwards;">
+                <span class="year" style="color: var(--accent);">2026</span>
+                <h3 style="color: var(--black);">The Bridge is Built</h3>
+                <p style="color: var(--text-muted);">Rebranded to SoftBridge Labs to better reflect our expansion into
+                    scalable software solutions and enterprise-grade infrastructure.</p>
+            </div>
+            <div class="timeline-item" style="animation: fadeInUp 0.8s ease 0.1s both;">
+                <span class="year" style="color: var(--accent);">2020 - 2025</span>
+                <h3 style="color: var(--black);">ProTec Games Era</h3>
+                <p style="color: var(--text-muted);">Established a foundation in high-performance mobile gaming,
+                    amassing thousands of active users and building a dedicated community.</p>
+            </div>
+        </section>
+
+        <div class="stats-grid-about"
+            style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+            <div class="stat-card"
+                style="text-align: center; padding: 40px 24px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); animation: fadeInUp 0.8s ease forwards;">
+                <span class="stat-number" style="font-size: 2.5rem; color: var(--accent); font-weight: 800;">5+</span>
+                <p style="color: var(--text-muted); margin-top: 8px;">Years of Innovation</p>
+            </div>
+            <div class="stat-card"
+                style="text-align: center; padding: 40px 24px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); animation: fadeInUp 0.8s ease 0.1s both;">
+                <span class="stat-number" style="font-size: 2.5rem; color: var(--accent); font-weight: 800;">27+</span>
+                <p style="color: var(--text-muted); margin-top: 8px;">GitHub Repositories</p>
+            </div>
+            <div class="stat-card"
+                style="text-align: center; padding: 40px 24px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); animation: fadeInUp 0.8s ease 0.2s both;">
+                <span class="stat-number"
+                    style="font-size: 2.5rem; color: var(--accent); font-weight: 800;">10,000+</span>
+                <p style="color: var(--text-muted); margin-top: 8px;">Global Downloads</p>
+            </div>
+            <div class="stat-card"
+                style="text-align: center; padding: 40px 24px; background: white; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); animation: fadeInUp 0.8s ease 0.3s both;">
+                <span class="stat-number" style="font-size: 2.5rem; color: var(--accent); font-weight: 800;">190+</span>
+                <p style="color: var(--text-muted); margin-top: 8px;">Countries</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-branding">
+            <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
+        </div>
+        <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

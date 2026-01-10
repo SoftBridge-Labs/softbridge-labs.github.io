@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs & Products | SoftBridge Labs - Innovating Software & Games</title>
+    <meta name="description"
+        content="Explore the SoftBridge Labs portfolio: high-performance mobile games, developer utilities, and a robust open-source ecosystem.">
+    <meta name="keywords"
+        content="SoftBridge Labs programs, game development, developer tools, open source projects, software portfolio">
+    <meta name="author" content="SoftBridge Labs">
+    <link rel="canonical" href="https://softbridgelabs.com/programs/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://softbridgelabs.com/programs/">
+    <meta property="og:title" content="Programs & Products | SoftBridge Labs">
+    <meta property="og:description"
+        content="Explore the projects and products that define SoftBridge Labs. From mobile games to developer utilities.">
+    <meta property="og:image" content="https://softbridgelabs.com/assets/og-image.jpg">
+
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="/">SOFTBRIDGE <span class="labs">LABS</span></a></div>
+            <div class="nav-right">
+                <div class="desktop-links">
+                    <a href="/about">About</a>
+                    <a href="/programs">Programs</a>
+                    <a href="/legal">Legal</a>
+                </div>
+                <button id="waffle-btn" class="icon-btn">
+                    <span class="material-symbols-outlined">apps</span>
+                </button>
+                <button id="mobile-toggle" class="mobile-toggle icon-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">SOFTBRIDGE</span>
+            <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <nav class="sidebar-links">
+            <a href="/about">About</a>
+            <a href="/programs">Programs</a>
+            <a href="/legal">Legal</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <div id="apps-panel" class="apps-overlay">
+        <div class="overlay-content">
+            <p class="overlay-label">ECOSYSTEM</p>
+            <div id="product-container" class="bento-grid"></div>
+        </div>
+    </div>
+
+    <section class="hero hero-small">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/program.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/program.jpg" alt="Programs Hero" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Our <span style="color: var(--accent);">Portfolio</span></h1>
+            <p class="hero-subtitle" style="margin-top: 16px;">Explore the projects and products that define SoftBridge
+                Labs</p>
+        </div>
+    </section>
+
+    <main style="padding: 60px 24px; max-width: 1200px; margin: 0 auto;">
+        <section style="margin-bottom: 60px;">
+            <h2 class="section-title">Featured Projects</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 60px;">
+                <!-- Game Development -->
+                <div class="project-card"
+                    style="background: white; padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.1s both;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--accent-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 32px;">
+                        🎮</div>
+                    <h3 style="color: var(--text); font-size: 1.4rem; margin-bottom: 16px; font-weight: 700;">Mobile
+                        Gaming Suite</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 28px;">High-performance,
+                        immersive gaming experiences built for mobile platforms with millions of engaged users.</p>
+                    <a href="https://play.google.com/store/apps/dev?id=8237023983569180393" target="_blank"
+                        style="color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
+                        Explore Games →
+                    </a>
+                </div>
+
+                <!-- Utilities -->
+                <div class="project-card"
+                    style="background: white; padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.2s both;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--accent-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 32px;">
+                        ⚙️</div>
+                    <h3 style="color: var(--text); font-size: 1.4rem; margin-bottom: 16px; font-weight: 700;">Developer
+                        Tools</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 28px;">Powerful utilities
+                        including HTML Editor PRO, designed to streamline development workflows.</p>
+                    <a href="https://play.google.com/store/apps/dev?id=8237023983569180393" target="_blank"
+                        style="color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
+                        View Tools →
+                    </a>
+                </div>
+
+                <!-- Open Source -->
+                <div class="project-card"
+                    style="background: white; padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; animation: fadeInUp 0.8s ease 0.3s both;">
+                    <div
+                        style="width: 64px; height: 64px; background: var(--accent-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 32px;">
+                        💻</div>
+                    <h3 style="color: var(--text); font-size: 1.4rem; margin-bottom: 16px; font-weight: 700;">Open
+                        Source</h3>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 28px;">27+ repositories
+                        featuring Python, JavaScript, and other tech stacks contributing to the developer community.</p>
+                    <a href="https://github.com/ProTecGames" target="_blank"
+                        style="color: var(--accent); font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
+                        Visit GitHub →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section
+            style="background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%); padding: 60px 40px; border-radius: 24px; color: white; animation: fadeInUp 0.8s ease 0.4s both;">
+            <h2 class="section-title" style="margin-bottom: 24px; text-align: left; color: white;">Ready to Build?</h2>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; max-width: 600px;">Join our community of
+                developers and creators. Explore our projects, contribute to open source, or integrate our tools into
+                your workflow.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="https://github.com/ProTecGames" target="_blank" class="btn-black"
+                    style="background: var(--accent); color: black; border: none;">Explore on GitHub</a>
+                <a href="/about" class="btn-white" style="border-color: rgba(255,255,255,0.3); color: white;">Learn
+                    More</a>
+            </div>
+        </section>
+
+        <section style="margin-top: 80px;">
+            <h2 class="section-title">Recent Updates</h2>
+            <div style="display: grid; gap: 24px; margin-top: 40px;">
+                <div
+                    style="padding: 24px; background: var(--card-bg); border-radius: 16px; animation: fadeInUp 0.8s ease forwards;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                        <span
+                            style="background: var(--accent); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 600;">Q1
+                            2026</span>
+                    </div>
+                    <h3 style="color: var(--black); margin-bottom: 8px;">Major Platform Update</h3>
+                    <p style="color: var(--text-muted);">Complete redesign of infrastructure with improved performance
+                        and scalability across all platforms.</p>
+                </div>
+                <div
+                    style="padding: 24px; background: var(--card-bg); border-radius: 16px; animation: fadeInUp 0.8s ease 0.1s both;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                        <span
+                            style="background: var(--accent); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 600;">Jan
+                            2026</span>
+                    </div>
+                    <h3 style="color: var(--black); margin-bottom: 8px;">SoftBridge Labs Launch</h3>
+                    <p style="color: var(--text-muted);">Official rebranding from ProTec Games to SoftBridge Labs,
+                        marking our expansion into enterprise software.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-branding">
+            <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
+        </div>
+        <div class="social-bar">
+            <a href="https://www.facebook.com/104285095385232" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/softbridge.labs/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/mwlite/company/softbridge.labs" target="_blank">LinkedIn</a>
+            <a href="https://www.x.com/softbridge.labs" target="_blank">X (Twitter)</a>
+            <a href="https://www.youtube.com/@softbridge.labs" target="_blank">YouTube</a>
+        </div>
+        <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
