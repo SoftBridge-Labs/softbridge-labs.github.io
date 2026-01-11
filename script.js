@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Register Service Worker for Media Caching
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+                console.log('SW registered: ', registration);
+            }).catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
+        });
+    }
+
+    // Apply Settings (Theme)
+    const savedTheme = localStorage.getItem('softbridge-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Disable right-click on images and media
+    document.addEventListener('contextmenu', (e) => {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO' || e.target.closest('.hero-bg-wrapper')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
     const waffleBtn = document.getElementById('waffle-btn');
     const appsPanel = document.getElementById('apps-panel');
     const mobileToggle = document.getElementById('mobile-toggle');
@@ -6,6 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarClose = document.getElementById('sidebar-close');
     const overlay = document.getElementById('sidebar-overlay');
     const productContainer = document.getElementById('product-container');
+
+    // Global Theme Function
+    const updateTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('softbridge-theme', theme);
+
+        // Update any theme buttons on the page (e.g., settings page)
+        const lightBtn = document.getElementById('light-theme-btn');
+        const darkBtn = document.getElementById('dark-theme-btn');
+        if (lightBtn && darkBtn) {
+            lightBtn.classList.toggle('active', theme === 'light');
+            darkBtn.classList.toggle('active', theme === 'dark');
+        }
+    };
 
     // Counter animation function
     const animateCounter = (element, target) => {
@@ -96,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (productContainer) {
                 const limitedData = data.slice(0, 6);
                 productContainer.innerHTML = limitedData.map((p, index) => `
-                    <a href="${p.url}" class="product-card" target="_blank" rel="noopener noreferrer" style="animation-delay: ${index * 0.1}s">
+                    <a href="/apps/${p.id}/" class="product-card" style="animation-delay: ${index * 0.1}s">
                         <img src="${p.icon}" alt="${p.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
                         <h3>${p.name}</h3>
                     </a>
@@ -104,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (data.length > 6) {
                     const viewAllBtn = document.createElement('a');
-                    viewAllBtn.href = '/products';
+                    viewAllBtn.href = '/apps/';
                     viewAllBtn.className = 'view-all-tray';
-                    viewAllBtn.textContent = 'View All Products';
-                    productContainer.parentNode.appendChild(viewAllBtn);
+                    viewAllBtn.textContent = 'Laboratory Catalog';
+                    productContainer.after(viewAllBtn);
                 }
             }
         })

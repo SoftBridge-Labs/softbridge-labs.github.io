@@ -1,20 +1,26 @@
 [
   {
+    "id": "htmleditorpro",
     "name": "HTML Editor PRO - with AI",
     "icon": "/assets/logo/html-editor-pro.jpg",
     "url": "https://play.google.com/store/apps/details?id=com.protecgames.htmleditorpro",
-    "description": "Explore endless possibilities of Web Development in Android with HTML Editor Pro."
+    "description": "Explore endless possibilities of Web Development in Android with HTML Editor Pro.",
+    "long_description": "Take your mobile development to the next level with HTML Editor PRO. This professional-grade laboratory tool features an integrated AI assistant, real-time preview, and full support for modern web standards. Whether you're debugging on the go or building complex prototypes, our editor provides a high-performance environment optimized for the Android filesystem. It includes advanced syntax highlighting, auto-completion, and direct integration with GitHub, making it the definitive choice for professional web developers working in mobile contexts."
   },
   {
+    "id": "karbonsites",
     "name": "Karbon Sites",
     "icon": "/assets/logo/karbon-sites.jpg",
     "url": "https://www.karbonsites.space/",
-    "description": "Go beyond static snippets. Generate, refine, and deploy entire web projects with AI in a powerful and intuitive editor."
+    "description": "Go beyond static snippets. Generate, refine, and deploy entire web projects with AI in a powerful and intuitive editor.",
+    "long_description": "Karbon Sites is the next evolution in web project management. Engineered for rapid prototyping and deployment, it allows you to generate entire project architectures from a single prompt. Our cloud-based laboratory environment handles the heavy lifting of environment configuration, letting you focus on refining your vision. With Karbon, moving from a conceptual laboratory experiment to a live production site takes minutes, not days. It features advanced AI interpolation, modular component injection, and one-click global deployment."
   },
   {
+    "id": "verbovisions",
     "name": "VerboVisions - AI Image Generator",
     "icon": "/assets/logo/verbovisions.png",
     "url": "https://play.google.com/store/apps/details?id=com.protecgames.verbovisions",
-    "description": "Transform your words into captivating visuals with VerboVisons."
+    "description": "Transform your words into captivating visuals with VerboVisons.",
+    "long_description": "Unlock the power of visual synthesis with VerboVisions. This AI-driven imaging laboratory translates complex linguistic prompts into stunning, high-definition digital artwork. Using state-of-the-art neural networks trained on vast creative datasets, VerboVisions understands nuance, style, and composition at a granular level. From photorealistic laboratory renderings to abstract digital concepts, the application provides an intuitive interface for infinite creative exploration on mobile devices."
   }
 ]

@@ -1,26 +1,34 @@
 [
     {
+        "id": "gitlook",
         "name": "GitLook",
         "icon": "",
         "url": "https://gitlook-ai.vercel.app/",
-        "description": "Gemini and GitHub API based platform that provides a detailed report and 20 quiz on your GitHub profile"
+        "description": "Gemini and GitHub API based platform that provides a detailed report and 20 quiz on your GitHub profile",
+        "long_description": "GitLook is a specialized diagnostic tool engineered for the GitHub ecosystem. By leveraging Google's Gemini AI and the GitHub API, it performs a deep-tissue analysis of your developer profile. The laboratory generates a comprehensive report on your contribution patterns, linguistic styles in commits, and technical competency areas. Beyond static analysis, it generates an interactive 20-question technical quiz specifically tailored to your public repositories, providing a unique way to benchmark your skills against your own codebase."
     },
     {
+        "id": "safeme",
         "name": "SafeMe",
         "icon": "https://pypi.org/static/images/logo-small.8998e9d1.svg",
         "url": "https://pypi.org/project/SafeMe",
-        "description": "One-command backend Linux server security: firewall, SSH hardening, DDoS protection, integrity checks and more."
+        "description": "One-command backend Linux server security: firewall, SSH hardening, DDoS protection, integrity checks and more.",
+        "long_description": "SafeMe is a hardening utility designed to transform standard Linux environments into high-security laboratory nodes with a single command. It evaluates system vulnerabilities and automatically implements defensive protocols including UFW firewall configuration, SSH hardening (disabling root login, custom ports), and anti-DDoS kernel tuning. Additionally, it establishes a persistent monitoring layer that performs file integrity checks and logs unauthorized access attempts, ensuring your production server remains an impenetrable fortress."
     },
     {
+        "id": "chix",
         "name": "ChiX - C Language Editor",
         "icon": "https://raw.githubusercontent.com/PrakharDoneria/ChiX/refs/heads/main/generated-icon.png",
         "url": "https://github.com/PrakharDoneria/ChiX/releases/tag/build-90f3b33",
-        "description": "Python based C Code Editor that uses GCC to run code in windows terminal"
+        "description": "Python based C Code Editor that uses GCC to run code in windows terminal",
+        "long_description": "ChiX is a lightweight, high-performance editor specifically engineered for C language research. Built with Python for maximum portability, it provides a seamless bridge to the GCC compiler infrastructure on Windows. The laboratory environment features a focused IDE with syntax highlighting designed to reduce cognitive load, one-click compilation, and direct terminal execution. It is the ideal tool for developers who require a responsive, distraction-free environment for rapid C-based algorithm experimentation and laboratory development."
     },
     {
+        "id": "gfmodel",
         "name": "GF Model",
         "icon": "https://pypi.org/static/images/logo-small.8998e9d1.svg",
         "url": "https://pypi.org/project/gfmodel/",
-        "description": "A simple Python client for the GitHub Models API. This package provides an easy-to-use interface to interact with GitHub's free, OpenAI-compatible inference API, allowing you to integrate large language models into your projects with a GitHub Personal Access Token (PAT) instead of a paid API key."
+        "description": "A simple Python client for the GitHub Models API. This package provides an easy-to-use interface to interact with GitHub's free, OpenAI-compatible inference API, allowing you to integrate large language models into your projects with a GitHub Personal Access Token (PAT) instead of a paid API key.",
+        "long_description": "GF Model is a precision-engineered Python library that simplifies the integration of GitHub's advanced inference models into laboratory software. It removes the friction of complex API configurations by providing an OpenAI-compatible interface that works directly with GitHub Personal Access Tokens. This allows researchers and developers to experiment with state-of-the-art LLMs in their local environments without the need for additional paid subscriptions, making high-level AI experimentation accessible and efficient within the standard Python ecosystem."
     }
 ]

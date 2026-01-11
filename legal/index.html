@@ -24,6 +24,15 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REJY59WGSQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-REJY59WGSQ');
+    </script>
 </head>
 
 <body>
@@ -38,6 +47,7 @@
                     <a href="/blog">Blog</a>
                     <a href="/legal" class="active">Legal</a>
                 </div>
+
                 <button id="waffle-btn" class="icon-btn">
                     <span class="material-symbols-outlined">apps</span>
                 </button>
@@ -59,6 +69,7 @@
             <a href="/devtools">Dev Tools</a>
             <a href="/blog">Blog</a>
             <a href="/legal" class="active">Legal</a>
+            <a href="/settings">Settings</a>
         </nav>
     </div>
     <div id="sidebar-overlay" class="overlay"></div>
@@ -67,6 +78,14 @@
         <div class="overlay-content">
             <p class="overlay-label">ECOSYSTEM</p>
             <div id="product-container" class="bento-grid"></div>
+            <div
+                style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; position: relative; z-index: 10;">
+                <a href="/settings"
+                    style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; padding: 12px; border-radius: 12px; background: var(--hover-bg);">
+                    <span class="material-symbols-outlined">settings</span>
+                    Laboratory Settings
+                </a>
+            </div>
         </div>
     </div>
 
@@ -84,7 +103,7 @@
 
     <main style="padding: 60px 24px; max-width: 1200px; margin: 0 auto;">
         <section class="legal-section"
-            style="animation: fadeInUp 0.8s ease forwards; margin-bottom: 40px; background: white; padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+            style="animation: fadeInUp 0.8s ease forwards; margin-bottom: 40px; background: var(--card-bg); padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
             <h2 class="section-title"
                 style="color: var(--text); margin-bottom: 24px; font-weight: 700; text-align: left;">Terms of Service
             </h2>
@@ -101,7 +120,7 @@
         </section>
 
         <section class="legal-section"
-            style="animation: fadeInUp 0.8s ease 0.1s both; margin-bottom: 60px; background: white; padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+            style="animation: fadeInUp 0.8s ease 0.1s both; margin-bottom: 60px; background: var(--card-bg); padding: 48px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
             <h2 class="section-title"
                 style="color: var(--text); margin-bottom: 24px; font-weight: 700; text-align: left;">Privacy Policy</h2>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 16px;">
@@ -122,7 +141,7 @@
         </section>
 
         <section class="legal-section" style="animation: fadeInUp 0.8s ease 0.2s both; margin-bottom: 60px;">
-            <h2 class="section-title" style="color: var(--black); margin-bottom: 24px; text-align: left;">Intellectual
+            <h2 class="section-title" style="color: var(--text); margin-bottom: 24px; text-align: left;">Intellectual
                 Property</h2>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 16px;">
                 All content, features, and functionality (including but not limited to all information, software, text,
@@ -172,6 +191,13 @@
     <footer class="footer">
         <div class="footer-branding">
             <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
+            <div style="margin-top: 20px;">
+                <a href="/settings"
+                    style="text-decoration: none; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">settings</span>
+                    Laboratory Settings
+                </a>
+            </div>
         </div>
 
         <div class="social-bar">

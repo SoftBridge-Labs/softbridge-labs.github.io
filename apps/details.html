@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Details | SoftBridge Labs</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .app-hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 0 24px;
+        }
+
+        .app-content-container {
+            max-width: 1000px;
+            margin: -100px auto 100px;
+            background: var(--bg);
+            border-radius: 40px;
+            padding: 80px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .app-large-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+        }
+
+        .long-desc {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .app-header-flex {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .app-content-container {
+                padding: 40px 24px;
+                margin-top: -60px;
+                border-radius: 30px;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REJY59WGSQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-REJY59WGSQ');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="/">SoftBridge <span class="labs">Labs</span></a></div>
+            <div class="nav-right">
+                <div class="desktop-links">
+                    <a href="/about">About</a>
+                    <a href="/products">Products</a>
+                    <a href="/devtools">Dev Tools</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/legal">Legal</a>
+                </div>
+                <button id="waffle-btn" class="icon-btn">
+                    <span class="material-symbols-outlined">apps</span>
+                </button>
+                <button id="mobile-toggle" class="mobile-toggle icon-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">SoftBridge</span>
+            <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <nav class="sidebar-links">
+            <a href="/about">About</a>
+            <a href="/products">Products</a>
+            <a href="/devtools">Dev Tools</a>
+            <a href="/blog">Blog</a>
+            <a href="/legal">Legal</a>
+            <a href="/settings">Settings</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <div id="apps-panel" class="apps-overlay">
+        <div class="overlay-content">
+            <p class="overlay-label">ECOSYSTEM</p>
+            <div id="product-container" class="bento-grid"></div>
+            <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">
+                <a href="/settings"
+                    style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; padding: 12px; border-radius: 12px; background: var(--hover-bg);">
+                    <span class="material-symbols-outlined">settings</span>
+                    Laboratory Settings
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="app-hero">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/app.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/app.jpg" alt="App Background" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <p class="badge">APPLICATION LABORATORY</p>
+            <h1 class="hero-title" id="app-title-display">Laboratory</h1>
+        </div>
+    </section>
+
+    <main class="app-content-container">
+        <div id="app-details-display">
+            <!-- Dynamic Content -->
+            <div style="text-align: center; padding: 40px;">
+                <p>Establishing laboratory connection...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-branding">
+            <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
+        </div>
+
+        <div class="social-bar">
+            <a href="https://www.facebook.com/104285095385232" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/softbridge.labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/mwlite/company/softbridge.labs" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.x.com/softbridge.labs" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            <a href="https://www.youtube.com/@softbridge.labs" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+        <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('app-details-display');
+            const titleDisplay = document.getElementById('app-title-display');
+            const urlParams = new URLSearchParams(window.location.search);
+            // Support both /apps/details.html?id=xyz and /apps/xyz/ routes
+            const appId = urlParams.get('id') || window.location.pathname.split('/').filter(Boolean).pop();
+
+            if (!appId || appId === 'apps') {
+                container.innerHTML = '<p>No application ID specified in laboratory logs.</p>';
+                return;
+            }
+
+            Promise.all([
+                fetch('/data/products.json').then(r => r.json()),
+                fetch('/data/devtools.json').then(r => r.json())
+            ]).then(([products, devtools]) => {
+                const allApps = [...products, ...devtools];
+                const app = allApps.find(a => a.id === appId);
+
+                if (app) {
+                    document.title = `${app.name} | SoftBridge Labs`;
+                    titleDisplay.textContent = app.name;
+                    container.innerHTML = `
+                        <div class="app-header-flex">
+                            <img src="${app.icon || 'https://cdn-icons-png.flaticon.com/512/25/25231.png'}" class="app-large-icon" alt="${app.name}" style="background: var(--card-bg); border: 1px solid var(--border);" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
+                            <div style="text-align: left;">
+                                <h1 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--text);">${app.name}</h1>
+                                <p style="font-size: 1.2rem; color: var(--accent); font-weight: 600;">${app.description}</p>
+                            </div>
+                        </div>
+                        <div class="long-desc" style="text-align: left;">
+                            ${app.long_description || 'Detailed technical specifications are currently being decrypted in our laboratory.'}
+                        </div>
+                        <div class="app-actions">
+                            <a href="${app.url}" target="_blank" class="btn-black" style="padding: 18px 40px; font-size: 1.1rem;">Launch Application</a>
+                            <a href="/products" class="btn-white" style="padding: 18px 40px;">Back to Ecosystem</a>
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = '<p>Application signature not found in laboratory database.</p>';
+                }
+            }).catch(err => {
+                container.innerHTML = '<p>Laboratory decryption failed. Please check network connection.</p>';
+            });
+        });
+    </script>
+</body>
+
+</html>
