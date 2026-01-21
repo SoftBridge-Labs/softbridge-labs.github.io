@@ -1,5 +1,13 @@
 [
   {
+    "id": "CommitAds",
+    "name": "CommitAds",
+    "icon": "/assets/logo/CommitAds.png",
+    "url": "https://ads.softbridgelabs.in/",
+    "description": "Monetize & Advertise. One Dev Ecosystem.",
+    "long_description": "CommitAds connects advertisers with developers and empowers open-source maintainers to earn from their work. A single platform for growth and sustainability."
+  },
+  {
     "id": "htmleditorpro",
     "name": "HTML Editor PRO - with AI",
     "icon": "/assets/logo/html-editor-pro.jpg",
