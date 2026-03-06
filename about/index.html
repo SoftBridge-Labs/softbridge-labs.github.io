@@ -73,58 +73,7 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><a href="/">SoftBridge <span class="labs">Labs</span></a></div>
-            <div class="nav-right">
-                <div class="desktop-links">
-                    <a href="/about" class="active">About</a>
-                    <a href="/products">Products</a>
-                    <a href="/devtools">Dev Tools</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/legal">Legal</a>
-                </div>
-
-                <button id="waffle-btn" class="icon-btn">
-                    <span class="material-symbols-outlined">apps</span>
-                </button>
-                <button id="mobile-toggle" class="mobile-toggle icon-btn">
-                    <span class="material-symbols-outlined">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div id="mobile-sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <span class="logo">SoftBridge</span>
-            <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
-        </div>
-        <nav class="sidebar-links">
-            <a href="/about" class="active">About</a>
-            <a href="/products">Products</a>
-            <a href="/devtools">Dev Tools</a>
-            <a href="/blog">Blog</a>
-            <a href="/legal">Legal</a>
-            <a href="/settings">Settings</a>
-        </nav>
-    </div>
-    <div id="sidebar-overlay" class="overlay"></div>
-
-    <div id="apps-panel" class="apps-overlay">
-        <div class="overlay-content">
-            <p class="overlay-label">ECOSYSTEM</p>
-            <div id="product-container" class="bento-grid"></div>
-            <div
-                style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; position: relative; z-index: 10;">
-                <a href="/settings"
-                    style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; padding: 12px; border-radius: 12px; background: var(--hover-bg);">
-                    <span class="material-symbols-outlined">settings</span>
-                    Laboratory Settings
-                </a>
-            </div>
-        </div>
-    </div>
+    <div id="header-placeholder"></div>
 
     <section class="hero hero-small">
         <div class="hero-bg-wrapper">
@@ -212,29 +161,8 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-branding">
-            <h2 class="footer-logo-massive">SoftBridge <span class="thin">Labs</span></h2>
-            <div style="margin-top: 20px;">
-                <a href="/settings"
-                    style="text-decoration: none; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">settings</span>
-                    Laboratory Settings
-                </a>
-            </div>
-        </div>
+    <div id="footer-placeholder"></div>
 
-        <div class="social-bar">
-            <a href="https://www.facebook.com/softbridge.labs" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/softbridge.labs/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.linkedin.com/company/softbridge-labs" target="_blank"
-                rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://www.x.com/softbridge.labs" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
-            <a href="https://www.youtube.com/@softbridge-labs" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
-
-        <p class="copyright">© 2026 SoftBridge Labs. All rights reserved.</p>
-    </footer>
 
     <script src="/script.js"></script>
 </body>

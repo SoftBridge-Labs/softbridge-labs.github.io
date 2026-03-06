@@ -30,5 +30,13 @@
     "url": "https://play.google.com/store/apps/details?id=com.protecgames.verbovisions",
     "description": "Transform your words into captivating visuals with VerboVisons.",
     "long_description": "Unlock the power of visual synthesis with VerboVisions. This AI-driven imaging laboratory translates complex linguistic prompts into stunning, high-definition digital artwork. Using state-of-the-art neural networks trained on vast creative datasets, VerboVisions understands nuance, style, and composition at a granular level. From photorealistic laboratory renderings to abstract digital concepts, the application provides an intuitive interface for infinite creative exploration on mobile devices."
+  },
+  {
+    "id": "aidroid",
+    "name": "AiDroid",
+    "icon": "/assets/logo/aidroid.png",
+    "url": "https://play.google.com/store/apps/details?id=in.softbridgelabs.aidroid",
+    "description": "Premium AI chat experience built with Flutter and modular clean architecture.",
+    "long_description": "AiDroid is a professional-grade mobile laboratory for artificial intelligence, engineered with Flutter and Dart. It features a highly decoupled modular architecture, responsive UI, and seamless real-time integration with state-of-the-art AI models. Designed for developers and AI enthusiasts who value high-performance software engineering and scalable state management."
   }
 ]

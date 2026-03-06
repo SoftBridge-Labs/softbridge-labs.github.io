@@ -22,13 +22,125 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const waffleBtn = document.getElementById('waffle-btn');
-    const appsPanel = document.getElementById('apps-panel');
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const sidebar = document.getElementById('mobile-sidebar');
-    const sidebarClose = document.getElementById('sidebar-close');
-    const overlay = document.getElementById('sidebar-overlay');
-    const productContainer = document.getElementById('product-container');
+    // --- Component Loading Logic ---
+    const loadComponent = async (id, path) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        try {
+            const response = await fetch(path);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const html = await response.text();
+            element.innerHTML = html;
+            return true;
+        } catch (error) {
+            console.error(`Could not load component ${path}:`, error);
+            return false;
+        }
+    };
+
+    const initHeader = () => {
+        const waffleBtn = document.getElementById('waffle-btn');
+        const appsPanel = document.getElementById('apps-panel');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const overlay = document.getElementById('sidebar-overlay');
+        const productContainer = document.getElementById('product-container');
+
+        if (!waffleBtn || !appsPanel) return;
+
+        const toggleSidebar = () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        };
+
+        if (mobileToggle) mobileToggle.addEventListener('click', toggleSidebar);
+        if (sidebarClose) sidebarClose.addEventListener('click', toggleSidebar);
+        if (overlay) overlay.addEventListener('click', toggleSidebar);
+
+        if (waffleBtn) {
+            waffleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                appsPanel.classList.toggle('active');
+                // Add rotation animation
+                waffleBtn.style.transform = appsPanel.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0deg)';
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            if (appsPanel && !appsPanel.contains(e.target) && e.target !== waffleBtn) {
+                appsPanel.classList.remove('active');
+                waffleBtn.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Load Ecosystem Apps
+        fetch('/data/products.json')
+            .then(res => res.json())
+            .then(data => {
+                if (productContainer) {
+                    const limitedData = data.slice(0, 6);
+                    productContainer.innerHTML = limitedData.map((p, index) => `
+                        <a href="/apps/${p.id}/" class="product-card" style="animation-delay: ${index * 0.1}s">
+                            <img src="${p.icon}" alt="${p.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
+                            <h3>${p.name}</h3>
+                        </a>
+                    `).join('');
+
+                    if (data.length > 6) {
+                        const viewAllBtn = document.createElement('a');
+                        viewAllBtn.href = '/apps/';
+                        viewAllBtn.className = 'view-all-tray';
+                        viewAllBtn.textContent = 'Laboratory Catalog';
+                        productContainer.after(viewAllBtn);
+                    }
+                }
+            })
+            .catch(() => {
+                if (productContainer) productContainer.innerHTML = '<p>Ecosystem offline</p>';
+            });
+
+        // Highlight Active Link
+        const currentPath = window.location.pathname;
+        const navLinks = {
+            '/about': 'nav-about',
+            '/products': 'nav-products',
+            '/devtools': 'nav-devtools',
+            '/blog': 'nav-blog',
+            '/legal': 'nav-legal'
+        };
+
+        const sideLinks = {
+            '/about': 'side-about',
+            '/products': 'side-products',
+            '/devtools': 'side-devtools',
+            '/blog': 'side-blog',
+            '/legal': 'side-legal',
+            '/settings': 'side-settings'
+        };
+
+        Object.keys(navLinks).forEach(path => {
+            if (currentPath.includes(path)) {
+                const el = document.getElementById(navLinks[path]);
+                if (el) el.classList.add('active');
+            }
+        });
+
+        Object.keys(sideLinks).forEach(path => {
+            if (currentPath.includes(path)) {
+                const el = document.getElementById(sideLinks[path]);
+                if (el) el.classList.add('active');
+            }
+        });
+    };
+
+    // Load Header and Footer
+    Promise.all([
+        loadComponent('header-placeholder', '/components/header.html'),
+        loadComponent('footer-placeholder', '/components/footer.html')
+    ]).then(() => {
+        initHeader();
+    });
 
     // Global Theme Function
     const updateTheme = (theme) => {
@@ -102,65 +214,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    const toggleSidebar = () => {
-        sidebar.classList.toggle('active');
-        overlay.classList.toggle('active');
-    };
-
-    if (mobileToggle) mobileToggle.addEventListener('click', toggleSidebar);
-    if (sidebarClose) sidebarClose.addEventListener('click', toggleSidebar);
-    if (overlay) overlay.addEventListener('click', toggleSidebar);
-
-    if (waffleBtn) {
-        waffleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            appsPanel.classList.toggle('active');
-            // Add rotation animation
-            waffleBtn.style.transform = appsPanel.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0deg)';
-        });
-    }
-
-    document.addEventListener('click', (e) => {
-        if (appsPanel && !appsPanel.contains(e.target) && e.target !== waffleBtn) {
-            appsPanel.classList.remove('active');
-            waffleBtn.style.transform = 'rotate(0deg)';
-        }
-    });
-
-    fetch('/data/products.json')
-        .then(res => res.json())
-        .then(data => {
-            if (productContainer) {
-                const limitedData = data.slice(0, 6);
-                productContainer.innerHTML = limitedData.map((p, index) => `
-                    <a href="/apps/${p.id}/" class="product-card" style="animation-delay: ${index * 0.1}s">
-                        <img src="${p.icon}" alt="${p.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
-                        <h3>${p.name}</h3>
-                    </a>
-                `).join('');
-
-                if (data.length > 6) {
-                    const viewAllBtn = document.createElement('a');
-                    viewAllBtn.href = '/apps/';
-                    viewAllBtn.className = 'view-all-tray';
-                    viewAllBtn.textContent = 'Laboratory Catalog';
-                    productContainer.after(viewAllBtn);
-                }
-            }
-        })
-        .catch(() => {
-            if (productContainer) productContainer.innerHTML = '<p>Ecosystem offline</p>';
-        });
-
     // Add parallax effect on scroll
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const navbar = document.querySelector('.navbar');
-
-        if (scrolled > 50) {
-            navbar.style.boxShadow = '0 8px 32px rgba(0, 102, 255, 0.1)';
-        } else {
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.02)';
+        if (navbar) {
+            if (scrolled > 50) {
+                navbar.style.boxShadow = '0 8px 32px rgba(0, 102, 255, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.02)';
+            }
         }
     });
 
@@ -200,18 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Hero Video Loading for mobile and desktop
     const heroVideos = document.querySelectorAll('.hero-video');
     heroVideos.forEach(video => {
-        // If video is already loaded
         if (video.readyState >= 3) {
             video.classList.add('loaded');
             video.play().catch(() => { });
         }
-
         video.addEventListener('canplaythrough', () => {
             video.classList.add('loaded');
             video.play().catch(() => { });
         });
-
-        // Fallback: forcefully check after 2 seconds
         setTimeout(() => {
             if (!video.classList.contains('loaded') && video.readyState >= 1) {
                 video.classList.add('loaded');

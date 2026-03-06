@@ -1,0 +1,52 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><a href="/">SoftBridge <span class="labs">Labs</span></a></div>
+        <div class="nav-right">
+            <div class="desktop-links">
+                <a href="/about" id="nav-about">About</a>
+                <a href="/products" id="nav-products">Products</a>
+                <a href="/devtools" id="nav-devtools">Dev Tools</a>
+                <a href="/blog" id="nav-blog">Blog</a>
+                <a href="/legal" id="nav-legal">Legal</a>
+            </div>
+
+            <button id="waffle-btn" class="icon-btn">
+                <span class="material-symbols-outlined">apps</span>
+            </button>
+            <button id="mobile-toggle" class="mobile-toggle icon-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div id="mobile-sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <span class="logo">SoftBridge</span>
+        <button id="sidebar-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <nav class="sidebar-links">
+        <a href="/about" id="side-about">About</a>
+        <a href="/products" id="side-products">Products</a>
+        <a href="/devtools" id="side-devtools">Dev Tools</a>
+        <a href="/blog" id="side-blog">Blog</a>
+        <a href="/legal" id="side-legal">Legal</a>
+        <a href="/settings" id="side-settings">Settings</a>
+    </nav>
+</div>
+<div id="sidebar-overlay" class="overlay"></div>
+
+<div id="apps-panel" class="apps-overlay">
+    <div class="overlay-content">
+        <p class="overlay-label">ECOSYSTEM</p>
+        <div id="product-container" class="bento-grid"></div>
+        <div
+            style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; position: relative; z-index: 10;">
+            <a href="/settings"
+                style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; padding: 12px; border-radius: 12px; background: var(--hover-bg);">
+                <span class="material-symbols-outlined">settings</span>
+                Laboratory Settings
+            </a>
+        </div>
+    </div>
+</div>
