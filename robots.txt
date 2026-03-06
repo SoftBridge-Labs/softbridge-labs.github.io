@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow settings and internal pages from indexing
+Disallow: /settings/
+Disallow: /apps/
+
+# Sitemap location
+Sitemap: https://softbridgelabs.in/sitemap.xml

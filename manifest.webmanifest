@@ -1,0 +1,16 @@
+{
+  "name": "SoftBridge Labs",
+  "short_name": "SoftBridge",
+  "description": "Engineering the Future of Software & AI — SoftBridge Labs builds high-performance apps, developer tools, and open-source ecosystems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/assets/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
