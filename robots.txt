@@ -1,9 +1,17 @@
 User-agent: *
 Allow: /
-
-# Disallow settings and internal pages from indexing
 Disallow: /settings/
-Disallow: /apps/
+Disallow: /404.html
 
-# Sitemap location
+# Allow major crawlers full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap
 Sitemap: https://softbridgelabs.in/sitemap.xml

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "sales-intern",
+    "title": "Sales Intern",
+    "department": "Growth & Partnerships",
+    "type": "Internship",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Performance-Based",
+    "compensation_detail": "Earn commission on every client you bring",
+    "short_description": "Help SoftBridge Labs grow by connecting businesses with our software development and design services. Earn directly based on your results.",
+    "description": "We're looking for a motivated Sales Intern to join our Growth team. Your primary role is to identify potential clients and bring them to SoftBridge Labs for our services — web development, Android development, app testing, logo design, and video editing. There's no fixed salary; you earn a competitive commission for every successful client conversion. This is a great opportunity to build real sales experience, grow your network, and earn on your own terms.",
+    "responsibilities": [
+      "Identify and reach out to potential clients via LinkedIn, social media, and personal networks",
+      "Pitch SoftBridge Labs services to businesses and individuals",
+      "Follow up with leads and coordinate with our internal team",
+      "Maintain a simple log of outreach and conversions",
+      "Represent SoftBridge Labs professionally in all communications"
+    ],
+    "requirements": [
+      "Strong communication and persuasion skills",
+      "Self-motivated with a results-driven mindset",
+      "Basic understanding of software/tech services is a plus",
+      "Ability to work independently with minimal supervision",
+      "No prior experience required — just hustle and drive"
+    ],
+    "perks": [
+      "Flexible remote work — work from anywhere",
+      "Performance-based earning with no cap",
+      "Certificate of internship on completion",
+      "Direct mentorship from the founding team",
+      "Opportunity to convert to a full-time role"
+    ],
+    "posted": "2026-04-01"
+  },
+  {
+    "id": "campus-ambassador",
+    "title": "Campus Ambassador",
+    "department": "Community & Growth",
+    "type": "Internship",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Performance-Based + Perks",
+    "compensation_detail": "Earn rewards, swag, and commissions for campus outreach",
+    "short_description": "Be the face of SoftBridge Labs at your college. Spread the word, grow our community, and earn rewards for every student or client you bring on board.",
+    "description": "We're looking for enthusiastic students to represent SoftBridge Labs at their colleges and universities. As a Campus Ambassador, you'll introduce fellow students to our apps, tools, and services — and help us build a strong community of young developers and creators. You'll earn rewards, recognition, and real-world experience in marketing and community building.",
+    "responsibilities": [
+      "Promote SoftBridge Labs apps and services within your campus community",
+      "Organize or participate in tech events, workshops, and demos",
+      "Share SoftBridge Labs content on social media and college groups",
+      "Refer students and potential clients to our services",
+      "Provide feedback from your campus community to our team",
+      "Represent SoftBridge Labs at college fests and hackathons"
+    ],
+    "requirements": [
+      "Currently enrolled in a college or university",
+      "Active presence on social media and college networks",
+      "Passion for technology, software, and startups",
+      "Good communication and networking skills",
+      "Self-driven with the ability to work independently"
+    ],
+    "perks": [
+      "Official SoftBridge Labs Campus Ambassador certificate",
+      "Performance-based commissions and rewards",
+      "Exclusive SoftBridge Labs swag and merchandise",
+      "Letter of recommendation from the founding team",
+      "Priority consideration for full-time roles after graduation",
+      "Access to internal tools and early product releases"
+    ],
+    "posted": "2026-04-09"
+  }
+]

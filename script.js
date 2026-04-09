@@ -74,6 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Tray close button
+        const trayClose = document.getElementById('tray-close');
+        if (trayClose) {
+            trayClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                appsPanel.classList.remove('active');
+                waffleBtn.style.transform = 'rotate(0deg)';
+            });
+        }
+
         // Load Ecosystem Apps
         fetch('/data/products.json')
             .then(res => res.json())
@@ -81,40 +91,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (productContainer) {
                     const limitedData = data.slice(0, 6);
                     productContainer.innerHTML = limitedData.map((p, index) => `
-                        <a href="/apps/${p.id}/" class="product-card" style="animation-delay: ${index * 0.1}s">
+                        <a href="/apps/${p.id}/" class="product-card" style="animation-delay: ${index * 0.05}s">
                             <img src="${p.icon}" alt="${p.name}" onerror="this.src='https://cdn-icons-png.flaticon.com/512/25/25231.png'">
                             <h3>${p.name}</h3>
                         </a>
                     `).join('');
-
-                    if (data.length > 6) {
-                        const viewAllBtn = document.createElement('a');
-                        viewAllBtn.href = '/apps/';
-                        viewAllBtn.className = 'view-all-tray';
-                        viewAllBtn.textContent = 'Laboratory Catalog';
-                        productContainer.after(viewAllBtn);
-                    }
                 }
             })
             .catch(() => {
-                if (productContainer) productContainer.innerHTML = '<p>Ecosystem offline</p>';
+                if (productContainer) productContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;text-align:center;padding:20px;">Ecosystem offline</p>';
             });
 
         // Highlight Active Link
         const currentPath = window.location.pathname;
         const navLinks = {
             '/about': 'nav-about',
+            '/services': 'nav-services',
             '/products': 'nav-products',
             '/devtools': 'nav-devtools',
             '/blog': 'nav-blog',
-            '/legal': 'nav-legal'
+            '/careers': 'nav-careers'
         };
 
         const sideLinks = {
             '/about': 'side-about',
+            '/services': 'side-services',
             '/products': 'side-products',
             '/devtools': 'side-devtools',
             '/blog': 'side-blog',
+            '/careers': 'side-careers',
             '/legal': 'side-legal',
             '/settings': 'side-settings'
         };
@@ -278,4 +283,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 2000);
     });
+
+    // Scroll reveal for .reveal elements
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 });

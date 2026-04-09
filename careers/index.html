@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/components/seo.js"
+        data-title="Careers | SoftBridge Labs — Join the Team"
+        data-desc="Join SoftBridge Labs. Explore open roles — Sales Intern, Campus Ambassador, and more. Remote-first, performance-based earning, real growth."
+        data-url="/careers/"
+        data-type="website"
+        data-keywords="SoftBridge Labs careers, jobs India, remote internship India, sales intern, campus ambassador, software company jobs Etawah"
+    ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="/style.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"JobPosting","title":"Sales Intern","description":"Help SoftBridge Labs grow by connecting businesses with our software services. Performance-based earning.","datePosted":"2026-04-01","employmentType":"INTERN","hiringOrganization":{"@type":"Organization","name":"SoftBridge Labs","sameAs":"https://softbridgelabs.in"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"IN"}},"baseSalary":{"@type":"MonetaryAmount","currency":"INR","value":{"@type":"QuantitativeValue","value":0,"unitText":"MONTH"}}}
+    </script>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="hero hero-small">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/about.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/about.jpg" alt="Careers" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <div class="badge">WE'RE HIRING</div>
+            <h1 class="hero-title">Build the <span style="color:var(--accent);">Future</span></h1>
+            <p class="hero-subtitle" style="margin-top:16px;">Join a small, ambitious team engineering next-gen software and AI experiences.</p>
+        </div>
+    </section>
+
+    <!-- Culture section -->
+    <section style="padding:60px 24px 0; max-width:1200px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;">
+            <div class="bento-card" style="padding:28px; animation-delay:0.05s;">
+                <span class="material-symbols-outlined" style="font-size:2rem; color:var(--accent); margin-bottom:12px; display:block;">rocket_launch</span>
+                <h3 style="margin-bottom:8px;">Move Fast</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem;">We ship quickly, iterate constantly, and learn from real users.</p>
+            </div>
+            <div class="bento-card" style="padding:28px; animation-delay:0.1s;">
+                <span class="material-symbols-outlined" style="font-size:2rem; color:var(--accent); margin-bottom:12px; display:block;">public</span>
+                <h3 style="margin-bottom:8px;">Work Remotely</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem;">Fully remote-first culture. Work from wherever you do your best thinking.</p>
+            </div>
+            <div class="bento-card" style="padding:28px; animation-delay:0.15s;">
+                <span class="material-symbols-outlined" style="font-size:2rem; color:var(--accent); margin-bottom:12px; display:block;">trending_up</span>
+                <h3 style="margin-bottom:8px;">Grow Fast</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem;">Early team members get outsized ownership, responsibility, and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="jobs-container" class="careers-grid">
+        <div style="grid-column:1/-1; text-align:center; padding:60px;">
+            <p style="color:var(--text-muted);">Loading open positions...</p>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.SBL && window.SBL.breadcrumb([
+                { name: 'Home', url: '/' },
+                { name: 'Careers', url: '/careers/' }
+            ]);
+            fetch('/data/jobs.json')
+                .then(res => res.json())
+                .then(jobs => {
+                    const container = document.getElementById('jobs-container');
+                    if (!jobs.length) {
+                        container.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;"><p style="color:var(--text-muted);">No open positions right now. Check back soon.</p></div>';
+                        return;
+                    }
+                    container.innerHTML = jobs.map((job, i) => `
+                        <a href="/careers/${job.id}/" class="job-card" style="animation-delay:${i * 0.08}s;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                                <span class="job-badge ${job.location_type}">${job.location}</span>
+                                <span style="font-size:0.75rem;color:var(--text-muted);">${job.type}</span>
+                            </div>
+                            <h3>${job.title}</h3>
+                            <span class="job-dept">${job.department}</span>
+                            <p>${job.short_description}</p>
+                            <div class="job-meta">
+                                <span class="job-meta-item">
+                                    <span class="material-symbols-outlined">payments</span>
+                                    ${job.compensation}
+                                </span>
+                                <span class="job-meta-item">
+                                    <span class="material-symbols-outlined">schedule</span>
+                                    ${job.type}
+                                </span>
+                            </div>
+                            <div class="job-apply-btn">
+                                View Role <span class="material-symbols-outlined" style="font-size:1rem;">arrow_forward</span>
+                            </div>
+                        </a>
+                    `).join('');
+                })
+                .catch(() => {
+                    document.getElementById('jobs-container').innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;"><p style="color:var(--text-muted);">Could not load positions.</p></div>';
+                });
+        });
+    </script>
+</body>
+</html>

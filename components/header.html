@@ -4,16 +4,17 @@
         <div class="nav-right">
             <div class="desktop-links">
                 <a href="/about" id="nav-about">About</a>
+                <a href="/services" id="nav-services">Services</a>
                 <a href="/products" id="nav-products">Products</a>
                 <a href="/devtools" id="nav-devtools">Dev Tools</a>
                 <a href="/blog" id="nav-blog">Blog</a>
-                <a href="/legal" id="nav-legal">Legal</a>
+                <a href="/careers" id="nav-careers">Careers</a>
             </div>
 
-            <button id="waffle-btn" class="icon-btn">
+            <button id="waffle-btn" class="icon-btn" aria-label="Open ecosystem panel">
                 <span class="material-symbols-outlined">apps</span>
             </button>
-            <button id="mobile-toggle" class="mobile-toggle icon-btn">
+            <button id="mobile-toggle" class="mobile-toggle icon-btn" aria-label="Open menu">
                 <span class="material-symbols-outlined">menu</span>
             </button>
         </div>
@@ -27,53 +28,74 @@
     </div>
     <nav class="sidebar-links">
         <a href="/about" id="side-about">About</a>
+        <a href="/services" id="side-services">Services</a>
         <a href="/products" id="side-products">Products</a>
         <a href="/devtools" id="side-devtools">Dev Tools</a>
         <a href="/blog" id="side-blog">Blog</a>
+        <a href="/careers" id="side-careers">Careers</a>
         <a href="/legal" id="side-legal">Legal</a>
         <a href="/settings" id="side-settings">Settings</a>
     </nav>
 </div>
 <div id="sidebar-overlay" class="overlay"></div>
 
+<!-- ECOSYSTEM PANEL -->
 <div id="apps-panel" class="apps-overlay">
-    <div class="overlay-content">
-        <p class="overlay-label">ECOSYSTEM</p>
+    <div class="tray-header">
+        <span class="tray-title">SoftBridge Ecosystem</span>
+        <button class="tray-close-btn icon-btn" id="tray-close" aria-label="Close panel">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+
+    <div class="tray-section">
+        <p class="overlay-label">APPS</p>
         <div id="product-container" class="bento-grid"></div>
+        <a href="/apps/" class="view-all-tray">View All Products <span class="material-symbols-outlined" style="font-size:1rem;vertical-align:middle;margin-left:4px;">arrow_forward</span></a>
+    </div>
 
-        <div style="margin-top: 32px;">
-            <p class="overlay-label">CONSOLE & DASHBOARDS</p>
-            <div class="console-links" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
-                <a href="https://account.softbridgelabs.in/" target="_blank"
-                    style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem; padding: 12px; border-radius: 12px; background: var(--hover-bg); border: 1px solid var(--border);">
-                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">account_circle</span>
-                    Account
-                </a>
-                <a href="https://code.htmleditor.softbridgelabs.in/" target="_blank"
-                    style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem; padding: 12px; border-radius: 12px; background: var(--hover-bg); border: 1px solid var(--border);">
-                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">code</span>
-                    Web Editor
-                </a>
-                <a href="https://sites.softbridgelabs.in/" target="_blank"
-                    style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem; padding: 12px; border-radius: 12px; background: var(--hover-bg); border: 1px solid var(--border);">
-                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">languages</span>
-                    Sites
-                </a>
-                <a href="https://ads.softbridgelabs.in/" target="_blank"
-                    style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-size: 0.9rem; padding: 12px; border-radius: 12px; background: var(--hover-bg); border: 1px solid var(--border);">
-                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">monetization_on</span>
-                    CommitAds
-                </a>
-            </div>
-        </div>
-
-        <div
-            style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; position: relative; z-index: 10;">
-            <a href="/settings"
-                style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-weight: 600; padding: 12px; border-radius: 12px; background: var(--hover-bg);">
-                <span class="material-symbols-outlined">settings</span>
-                Laboratory Settings
+    <div class="tray-section">
+        <p class="overlay-label">CONSOLE & DASHBOARDS</p>
+        <div class="console-links">
+            <a href="https://account.softbridgelabs.in/" target="_blank" class="console-link">
+                <span class="console-link-icon"><span class="material-symbols-outlined">account_circle</span></span>
+                <span class="console-link-text">
+                    <span class="console-link-name">Account</span>
+                    <span class="console-link-desc">Manage your profile</span>
+                </span>
+            </a>
+            <a href="https://code.htmleditor.softbridgelabs.in/" target="_blank" class="console-link">
+                <span class="console-link-icon"><span class="material-symbols-outlined">code</span></span>
+                <span class="console-link-text">
+                    <span class="console-link-name">Web Editor</span>
+                    <span class="console-link-desc">HTML Editor PRO</span>
+                </span>
+            </a>
+            <a href="https://sites.softbridgelabs.in/" target="_blank" class="console-link">
+                <span class="console-link-icon"><span class="material-symbols-outlined">language</span></span>
+                <span class="console-link-text">
+                    <span class="console-link-name">Karbon Sites</span>
+                    <span class="console-link-desc">Deploy web projects</span>
+                </span>
+            </a>
+            <a href="https://ads.softbridgelabs.in/" target="_blank" class="console-link">
+                <span class="console-link-icon"><span class="material-symbols-outlined">monetization_on</span></span>
+                <span class="console-link-text">
+                    <span class="console-link-name">CommitAds</span>
+                    <span class="console-link-desc">Monetize & advertise</span>
+                </span>
             </a>
         </div>
+    </div>
+
+    <div class="tray-footer">
+        <a href="/settings" class="tray-settings-link">
+            <span class="material-symbols-outlined">settings</span>
+            <span>Settings</span>
+        </a>
+        <a href="/legal" class="tray-settings-link">
+            <span class="material-symbols-outlined">gavel</span>
+            <span>Legal</span>
+        </a>
     </div>
 </div>
