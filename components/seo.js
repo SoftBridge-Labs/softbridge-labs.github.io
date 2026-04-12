@@ -2,7 +2,7 @@
  * SoftBridge Labs - Modular SEO & Meta Injector
  * Usage: <script src="/components/seo.js" data-title="..." data-desc="..." data-url="..." data-type="..."></script>
  * 
- * Automatically injects: canonical, OG tags, Twitter cards, theme-color, robots
+ * Automatically injects: canonical, OG tags, Twitter cards, theme-color, robots, geo, mobile
  */
 (function () {
     const script = document.currentScript;
@@ -45,9 +45,28 @@
     meta({ name: 'author', content: SITE_NAME });
     meta({ name: 'robots', content: robots });
     meta({ name: 'theme-color', content: '#4f46e5' });
+    meta({ name: 'msapplication-TileColor', content: '#4f46e5' });
+    meta({ name: 'application-name', content: SITE_NAME });
+
+    // Geo tags for India-based SEO
+    meta({ name: 'geo.region', content: 'IN-UP' });
+    meta({ name: 'geo.placename', content: 'Etawah, Uttar Pradesh, India' });
+    meta({ name: 'geo.position', content: '26.7859;79.0175' });
+    meta({ name: 'ICBM', content: '26.7859, 79.0175' });
+
+    // Mobile / PWA
+    meta({ name: 'mobile-web-app-capable', content: 'yes' });
+    meta({ name: 'apple-mobile-web-app-capable', content: 'yes' });
+    meta({ name: 'apple-mobile-web-app-status-bar-style', content: 'default' });
+    meta({ name: 'apple-mobile-web-app-title', content: SITE_NAME });
 
     // Canonical
     link({ rel: 'canonical', href: url });
+
+    // Favicon (ensure all pages have it)
+    link({ rel: 'icon', type: 'image/x-icon', href: BASE_URL + '/assets/favicon.ico' });
+    link({ rel: 'shortcut icon', type: 'image/x-icon', href: BASE_URL + '/assets/favicon.ico' });
+    link({ rel: 'apple-touch-icon', href: BASE_URL + '/assets/favicon.ico' });
 
     // Open Graph
     meta({ property: 'og:type', content: type });
@@ -60,10 +79,12 @@
     meta({ property: 'og:image:height', content: '630' });
     meta({ property: 'og:image:alt', content: title });
     meta({ property: 'og:locale', content: 'en_IN' });
+    meta({ property: 'og:locale:alternate', content: 'en_US' });
 
     // Twitter
     meta({ name: 'twitter:card', content: 'summary_large_image' });
     meta({ name: 'twitter:site', content: TWITTER_HANDLE });
+    meta({ name: 'twitter:creator', content: TWITTER_HANDLE });
     meta({ name: 'twitter:url', content: url });
     meta({ name: 'twitter:title', content: title });
     meta({ name: 'twitter:description', content: desc });
@@ -84,12 +105,18 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "SoftBridge Labs",
-        "alternateName": ["SoftBridge", "SoftBridge Labs India", "ProTec Games"],
+        "alternateName": ["SoftBridge", "SoftBridge Labs India", "ProTec Games", "SoftBridgeLabs"],
         "url": BASE_URL,
-        "logo": BASE_URL + "/assets/favicon.ico",
+        "logo": {
+            "@type": "ImageObject",
+            "url": BASE_URL + "/assets/favicon.ico",
+            "width": 512,
+            "height": 512
+        },
         "image": DEFAULT_IMAGE,
-        "description": "SoftBridge Labs is a software engineering laboratory specializing in high-performance mobile apps, AI-powered developer tools, and open-source ecosystems.",
+        "description": "SoftBridge Labs is a software engineering company specializing in high-performance mobile apps, AI-powered developer tools, and open-source ecosystems. Built in India, used worldwide.",
         "foundingDate": "2020",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 10 },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Professor Colony",
@@ -109,14 +136,25 @@
             "https://www.linkedin.com/company/softbridge-labs",
             "https://www.x.com/softbridge.labs",
             "https://www.youtube.com/@softbridge-labs",
-            "https://github.com/softbridge-labs"
+            "https://github.com/softbridge-labs",
+            "https://play.google.com/store/apps/dev?id=8237023983569180393"
         ],
         "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@softbridgelabs.in",
             "contactType": "customer support",
             "availableLanguage": ["English", "Hindi"]
-        }
+        },
+        "knowsAbout": [
+            "Android App Development",
+            "Flutter Development",
+            "Artificial Intelligence",
+            "Web Development",
+            "Open Source Software",
+            "Developer Tools",
+            "SMS Applications",
+            "Mobile Security"
+        ]
     });
 
     // BreadcrumbList injector

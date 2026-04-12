@@ -1,5 +1,14 @@
 [
   {
+    "id": "texticon",
+    "name": "SoftBridge Texts",
+    "icon": "/assets/logo/texts.png",
+    "url": "/apps/texticon/",
+    "description": "Modern, secure SMS management app built with Flutter and Native Android integration.",
+    "long_description": "SoftBridge Texts is a modern, feature-rich, and secure SMS management application built with Flutter and Native Android integration. Designed for speed and cleanliness, it provides a superior alternative to default messaging apps with advanced organization and security features.",
+    "beta": true
+  },
+  {
     "id": "CommitAds",
     "name": "CommitAds",
     "icon": "/assets/logo/CommitAds.png",
@@ -22,14 +31,6 @@
     "url": "https://sites.softbridgelabs.in/",
     "description": "Go beyond static snippets. Generate, refine, and deploy entire web projects with AI in a powerful and intuitive editor.",
     "long_description": "Karbon Sites is the next evolution in web project management. Engineered for rapid prototyping and deployment, it allows you to generate entire project architectures from a single prompt. Our cloud-based laboratory environment handles the heavy lifting of environment configuration, letting you focus on refining your vision. With Karbon, moving from a conceptual laboratory experiment to a live production site takes minutes, not days. It features advanced AI interpolation, modular component injection, and one-click global deployment."
-  },
-  {
-    "id": "verbovisions",
-    "name": "VerboVisions - AI Image Generator",
-    "icon": "/assets/logo/verbovisions.png",
-    "url": "https://play.google.com/store/apps/details?id=com.protecgames.verbovisions",
-    "description": "Transform your words into captivating visuals with VerboVisons.",
-    "long_description": "Unlock the power of visual synthesis with VerboVisions. This AI-driven imaging laboratory translates complex linguistic prompts into stunning, high-definition digital artwork. Using state-of-the-art neural networks trained on vast creative datasets, VerboVisions understands nuance, style, and composition at a granular level. From photorealistic laboratory renderings to abstract digital concepts, the application provides an intuitive interface for infinite creative exploration on mobile devices."
   },
   {
     "id": "authenticator",

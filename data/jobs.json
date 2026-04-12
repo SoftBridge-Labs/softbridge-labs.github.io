@@ -1,9 +1,234 @@
 [
   {
+    "id": "flutter-android-dev",
+    "title": "Flutter Android Developer Intern",
+    "department": "Mobile Engineering",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Build and ship Flutter-based Android apps at SoftBridge Labs. Work on real production apps used by thousands of users worldwide.",
+    "description": "We're looking for a passionate Flutter Android Developer Intern to join our mobile engineering team. You'll work directly on our production apps — AiDroid, SoftBridge Authenticator, SoftBridge Texts, and more. This is a hands-on role where you'll write real code that ships to real users. Top performers will receive a Letter of Recommendation from the founding team.",
+    "responsibilities": [
+      "Develop and maintain Flutter-based Android applications",
+      "Implement UI components following Material Design guidelines",
+      "Integrate REST APIs and local databases (Hive, SQLite)",
+      "Write clean, maintainable Dart code following clean architecture principles",
+      "Participate in code reviews and contribute to technical discussions",
+      "Fix bugs and improve app performance"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Basic knowledge of Flutter and Dart",
+      "Understanding of Android development fundamentals",
+      "Familiarity with Git and version control",
+      "Strong problem-solving skills and eagerness to learn"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "Work on real production apps with thousands of users",
+      "Mentorship from experienced Flutter developers",
+      "Flexible remote work — work from anywhere",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
+    "id": "nextjs-web-dev",
+    "title": "Next.js Web Developer Intern",
+    "department": "Web Engineering",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Build modern, performant web applications using Next.js and React for SoftBridge Labs products and internal tools.",
+    "description": "Join our web engineering team as a Next.js Developer Intern. You'll work on building and improving web-based products including dashboards, landing pages, and web apps. You'll get hands-on experience with modern React patterns, server-side rendering, and deployment pipelines. Top performers will receive a Letter of Recommendation.",
+    "responsibilities": [
+      "Build and maintain Next.js web applications",
+      "Implement responsive UI using Tailwind CSS or CSS Modules",
+      "Work with REST APIs and integrate backend services",
+      "Optimize web performance (Core Web Vitals, SEO)",
+      "Collaborate with designers to implement pixel-perfect UIs",
+      "Write clean, reusable React components"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Basic knowledge of React and JavaScript (ES6+)",
+      "Familiarity with HTML, CSS, and responsive design",
+      "Understanding of Next.js fundamentals (pages, routing, SSR/SSG) is a plus",
+      "Familiarity with Git"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "Work on live production web products",
+      "Mentorship from senior web developers",
+      "Flexible remote work",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
+    "id": "html-css-js-web-dev",
+    "title": "Frontend Web Developer Intern (HTML/CSS/JS)",
+    "department": "Web Engineering",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Design and build beautiful, responsive web pages using HTML, CSS, and vanilla JavaScript for SoftBridge Labs.",
+    "description": "We're looking for a Frontend Web Developer Intern with solid HTML, CSS, and JavaScript skills. You'll work on the SoftBridge Labs website, app landing pages, and marketing pages. This is a great opportunity to build a strong portfolio with real-world projects. Top performers will receive a Letter of Recommendation.",
+    "responsibilities": [
+      "Build and maintain responsive web pages using HTML5, CSS3, and JavaScript",
+      "Implement UI designs with attention to detail and cross-browser compatibility",
+      "Optimize pages for performance and SEO",
+      "Work with CSS animations and transitions",
+      "Collaborate with the design and backend teams",
+      "Maintain and improve existing website components"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Good understanding of HTML5, CSS3, and JavaScript",
+      "Knowledge of responsive design and Flexbox/Grid",
+      "Basic understanding of SEO principles",
+      "Familiarity with Git"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "Build a real portfolio with live projects",
+      "Mentorship from experienced developers",
+      "Flexible remote work",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
+    "id": "nodejs-backend-dev",
+    "title": "Node.js / Express Backend Developer Intern",
+    "department": "Backend Engineering",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Build scalable REST APIs and backend services using Node.js and Express for SoftBridge Labs products.",
+    "description": "Join our backend engineering team as a Node.js/Express Developer Intern. You'll design and build REST APIs, work with databases, and help power the backend of our apps and web services. You'll gain real-world experience with server-side development, authentication, and cloud deployment. Top performers will receive a Letter of Recommendation.",
+    "responsibilities": [
+      "Design and build RESTful APIs using Node.js and Express",
+      "Work with databases (MongoDB, PostgreSQL, or Firebase)",
+      "Implement authentication and authorization (JWT, OAuth)",
+      "Write clean, well-documented backend code",
+      "Collaborate with frontend and mobile teams to integrate APIs",
+      "Debug and optimize backend performance"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Basic knowledge of Node.js and Express.js",
+      "Understanding of REST API design principles",
+      "Familiarity with any database (SQL or NoSQL)",
+      "Basic knowledge of Git"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "Work on real backend systems powering production apps",
+      "Mentorship from senior backend engineers",
+      "Flexible remote work",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
+    "id": "fullstack-dev",
+    "title": "Full Stack Developer Intern",
+    "department": "Engineering",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Work across the full stack — frontend, backend, and APIs — to build and ship features for SoftBridge Labs products.",
+    "description": "We're looking for a Full Stack Developer Intern who's comfortable working across the entire web stack. You'll contribute to both frontend and backend codebases, build new features, and help ship products end-to-end. This is one of the most impactful intern roles at SoftBridge Labs. Top performers will receive a Letter of Recommendation.",
+    "responsibilities": [
+      "Build full-stack features from UI to API to database",
+      "Work with React/Next.js on the frontend and Node.js/Express on the backend",
+      "Design and integrate REST APIs",
+      "Work with databases and cloud services",
+      "Collaborate across teams to ship features end-to-end",
+      "Participate in architecture discussions and code reviews"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Working knowledge of HTML, CSS, JavaScript, and React",
+      "Basic understanding of Node.js and REST APIs",
+      "Familiarity with databases (SQL or NoSQL)",
+      "Strong problem-solving skills and ability to learn quickly",
+      "Familiarity with Git"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "End-to-end ownership of real features",
+      "Mentorship from full-stack engineers",
+      "Flexible remote work",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
+    "id": "android-app-tester",
+    "title": "Android App Tester Intern",
+    "department": "Quality Assurance",
+    "type": "Internship",
+    "duration": "6 Months",
+    "location": "Remote",
+    "location_type": "remote",
+    "compensation": "Unpaid",
+    "compensation_detail": "Internship completion certificate + Letter of Recommendation (top performer)",
+    "short_description": "Test SoftBridge Labs Android apps, find bugs, write test reports, and help us ship higher quality software to users worldwide.",
+    "description": "We're looking for a detail-oriented Android App Tester Intern to join our QA team. You'll test our Android apps — including AiDroid, SoftBridge Texts, SoftBridge Authenticator, and others — across different devices and Android versions. You'll write bug reports, create test cases, and work closely with developers to ensure we ship polished, high-quality software. Top performers will receive a Letter of Recommendation.",
+    "responsibilities": [
+      "Perform manual testing of Android apps across multiple devices and OS versions",
+      "Write detailed bug reports with steps to reproduce, screenshots, and device info",
+      "Create and maintain test cases and test plans",
+      "Perform regression testing after bug fixes",
+      "Test beta builds and provide structured feedback",
+      "Collaborate with developers to verify bug fixes"
+    ],
+    "requirements": [
+      "Currently enrolled in a B.Tech/BCA/MCA or equivalent program",
+      "Android smartphone for testing (required)",
+      "Strong attention to detail and analytical thinking",
+      "Good written communication skills for bug reports",
+      "Basic understanding of software testing concepts is a plus",
+      "No prior professional testing experience required"
+    ],
+    "perks": [
+      "Internship completion certificate",
+      "Letter of Recommendation for top performers",
+      "Early access to all SoftBridge Labs beta apps",
+      "Mentorship from QA and development team",
+      "Flexible remote work",
+      "Priority consideration for paid roles"
+    ],
+    "posted": "2026-04-12"
+  },
+  {
     "id": "sales-intern",
     "title": "Sales Intern",
     "department": "Growth & Partnerships",
     "type": "Internship",
+    "duration": "Open",
     "location": "Remote",
     "location_type": "remote",
     "compensation": "Performance-Based",
@@ -38,6 +263,7 @@
     "title": "Campus Ambassador",
     "department": "Community & Growth",
     "type": "Internship",
+    "duration": "Open",
     "location": "Remote",
     "location_type": "remote",
     "compensation": "Performance-Based + Perks",

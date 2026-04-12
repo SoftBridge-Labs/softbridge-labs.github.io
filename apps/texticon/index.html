@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/components/seo.js"
+        data-title="SoftBridge Texts | Modern SMS App for Android — SoftBridge Labs"
+        data-desc="SoftBridge Texts is a modern, secure, and feature-rich SMS management app for Android built with Flutter. Advanced organization, security features, and a clean UI. Now in Beta."
+        data-url="/apps/texticon/"
+        data-type="website"
+        data-image="/assets/logo/texts.png"
+        data-keywords="SoftBridge Texts, SMS app Android, Flutter SMS app, secure messaging app, Android SMS manager, SoftBridge Labs, Texts app, texticon, SMS organizer Android, best SMS app India"
+    ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SoftBridge Texts",
+      "alternateName": "Texts by SoftBridge Labs",
+      "applicationCategory": "CommunicationApplication",
+      "operatingSystem": "Android",
+      "url": "https://softbridgelabs.in/apps/texticon/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=in.softbridgelabs.text",
+      "description": "SoftBridge Texts is a modern, feature-rich, and secure SMS management application built with Flutter and Native Android integration. Designed for speed and cleanliness, it provides a superior alternative to default messaging apps.",
+      "author": { "@type": "Organization", "name": "SoftBridge Labs", "url": "https://softbridgelabs.in" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "applicationSubCategory": "SMS",
+      "screenshot": "https://softbridgelabs.in/assets/logo/texts.png"
+    }
+    </script>
+    <style>
+        .app-hero {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 0 24px;
+        }
+        .app-content-container {
+            max-width: 1000px;
+            margin: -60px auto 100px;
+            background: var(--bg);
+            border-radius: 32px;
+            padding: 64px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+        }
+        .app-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        .app-large-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 36px 0;
+        }
+        .feature-item {
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .feature-item p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .beta-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            margin-top: 56px;
+        }
+        .beta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid #fde68a;
+        }
+        [data-theme="dark"] .beta-badge {
+            background: #451a03;
+            color: #fbbf24;
+            border-color: #78350f;
+        }
+        .step-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 16px;
+        }
+        .step-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .join-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .app-header-flex { flex-direction: column; text-align: center; gap: 16px; }
+            .app-content-container { padding: 32px 20px; margin-top: -40px; border-radius: 24px; }
+            .beta-card { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="app-hero">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/app.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/app.jpg" alt="SoftBridge Texts" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <p class="badge">BETA TESTING</p>
+            <h1 class="hero-title">SoftBridge <span style="color:var(--accent);">Texts</span></h1>
+        </div>
+    </section>
+
+    <main class="app-content-container">
+        <div class="app-header-flex">
+            <img src="/assets/logo/texts.png" class="app-large-icon" alt="SoftBridge Texts Logo" onerror="this.src='/assets/favicon.ico'">
+            <div>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin:0;">SoftBridge Texts</h2>
+                    <span class="beta-badge" style="margin:0;">Beta</span>
+                </div>
+                <p style="font-size:1rem;color:var(--text-muted);margin:0;">Modern SMS Management for Android</p>
+                <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">by SoftBridge Labs · Flutter + Native Android</p>
+            </div>
+        </div>
+
+        <p style="font-size:1rem;color:var(--text-muted);line-height:1.8;margin-bottom:36px;">SoftBridge Texts is a modern, feature-rich, and secure SMS management application built with Flutter and Native Android integration. Designed for speed and cleanliness, it provides a superior alternative to default messaging apps with advanced organization and security features.</p>
+
+        <h3 style="font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:20px;">Key Features</h3>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">speed</span>
+                <h3>Fast & Clean UI</h3>
+                <p>Designed for speed with a minimal, distraction-free interface that puts your messages first.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">lock</span>
+                <h3>Security Features</h3>
+                <p>Built-in privacy screen, app lock, and secure message handling to protect your conversations.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">folder_open</span>
+                <h3>Smart Organization</h3>
+                <p>Advanced message organization with smart filters, categories, and search to find any message instantly.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">integration_instructions</span>
+                <h3>Native Integration</h3>
+                <p>Deep Native Android integration for reliable SMS sending, receiving, and notification handling.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">block</span>
+                <h3>Spam Blocking</h3>
+                <p>Intelligent spam detection and blocking to keep your inbox clean from unwanted messages.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">palette</span>
+                <h3>Theming</h3>
+                <p>Full light and dark mode support with customizable themes for a personalized experience.</p>
+            </div>
+        </div>
+
+        <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:32px;margin:36px 0;">
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:20px;">Technical Stack</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;">
+                <div>
+                    <p style="font-size:0.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Framework</p>
+                    <p style="font-size:0.9rem;color:var(--text-muted);">Flutter + Dart</p>
+                </div>
+                <div>
+                    <p style="font-size:0.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Platform</p>
+                    <p style="font-size:0.9rem;color:var(--text-muted);">Android (Native Integration)</p>
+                </div>
+                <div>
+                    <p style="font-size:0.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Status</p>
+                    <p style="font-size:0.9rem;color:var(--text-muted);">Beta Testing</p>
+                </div>
+                <div>
+                    <p style="font-size:0.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Developer</p>
+                    <p style="font-size:0.9rem;color:var(--text-muted);">SoftBridge Labs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beta Testing Section -->
+        <div class="beta-card">
+            <span class="beta-badge">Beta Testing Open</span>
+            <h2 style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:12px;">Join the Beta Program</h2>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:28px;">SoftBridge Texts is currently in beta testing. Help us build a better SMS experience by joining our testing program. Your feedback directly shapes the final product.</p>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">group_add</span>
+                    Step 1 — Join the Google Group
+                </h4>
+                <p>Join our Google Group to get access to beta builds on the Play Store. This is required to install the testing version.</p>
+                <div class="join-actions">
+                    <a href="https://groups.google.com/g/softbridge-labs" target="_blank" rel="noopener" class="btn-black">Join Google Group</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">download</span>
+                    Step 2 — Install the Beta
+                </h4>
+                <p>Once you've joined the group, install SoftBridge Texts from the Play Store using the link below.</p>
+                <div class="join-actions">
+                    <a href="https://play.google.com/store/apps/details?id=in.softbridgelabs.text" target="_blank" rel="noopener" class="btn-black">Get on Play Store</a>
+                    <a href="https://play.google.com/apps/testing/in.softbridgelabs.text" target="_blank" rel="noopener" class="btn-white">Join Beta Track</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">rate_review</span>
+                    Step 3 — Share Feedback
+                </h4>
+                <p>Found a bug or have a suggestion? Send your feedback to our team. Every report helps us improve.</p>
+                <div class="join-actions">
+                    <a href="mailto:support@softbridgelabs.in?subject=SoftBridge Texts Beta Feedback&body=App version:%0ADevice:%0AAndroid version:%0A%0AFeedback:%0A" class="btn-white">Send Feedback</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:48px;text-align:center;">
+            <a href="/apps/" class="btn-white">View All Apps</a>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.SBL && window.SBL.breadcrumb([
+                { name: 'Home', url: '/' },
+                { name: 'Apps', url: '/apps/' },
+                { name: 'SoftBridge Texts', url: '/apps/texticon/' }
+            ]);
+        });
+    </script>
+</body>
+</html>

@@ -7,61 +7,61 @@
   <!-- Core Pages -->
   <url>
     <loc>https://softbridgelabs.in/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/about/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/services/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/products/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/devtools/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/blog/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/careers/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/legal/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/legal/privacy.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/legal/terms.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -69,7 +69,7 @@
   <!-- Apps Catalog -->
   <url>
     <loc>https://softbridgelabs.in/apps/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -77,61 +77,61 @@
   <!-- Individual App Pages -->
   <url>
     <loc>https://softbridgelabs.in/apps/aidroid/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/authenticator/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/CommitAds/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/htmleditorpro/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/karbonsites/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/verbovisions/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/gitlook/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/safeme/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/chix/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/apps/gfmodel/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -139,15 +139,59 @@
   <!-- Careers -->
   <url>
     <loc>https://softbridgelabs.in/careers/sales-intern/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://softbridgelabs.in/careers/campus-ambassador/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/flutter-android-dev/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/nextjs-web-dev/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/html-css-js-web-dev/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/nodejs-backend-dev/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/fullstack-dev/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://softbridgelabs.in/careers/android-app-tester/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- New App: SoftBridge Texts -->
+  <url>
+    <loc>https://softbridgelabs.in/apps/texticon/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
