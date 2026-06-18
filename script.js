@@ -297,4 +297,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // WebMCP Tool Registration
+    const modelContext = (typeof document !== 'undefined' && document.modelContext) || (typeof navigator !== 'undefined' && navigator.modelContext);
+    if (modelContext && typeof modelContext.provideContext === 'function') {
+        try {
+            modelContext.provideContext({
+                tools: [
+                    {
+                        name: "get_products_list",
+                        description: "Fetches the current collection of active products at SoftBridge Labs.",
+                        inputSchema: { type: "object", properties: {} },
+                        execute: async () => {
+                            const res = await fetch('/data/products.json');
+                            const data = await res.json();
+                            return JSON.stringify(data);
+                        }
+                    },
+                    {
+                        name: "get_devtools_list",
+                        description: "Fetches the current list of developer tools.",
+                        inputSchema: { type: "object", properties: {} },
+                        execute: async () => {
+                            const res = await fetch('/data/devtools.json');
+                            const data = await res.json();
+                            return JSON.stringify(data);
+                        }
+                    },
+                    {
+                        name: "get_job_openings",
+                        description: "Fetches active job listings for careers at SoftBridge Labs.",
+                        inputSchema: { type: "object", properties: {} },
+                        execute: async () => {
+                            const res = await fetch('/data/jobs.json');
+                            const data = await res.json();
+                            return JSON.stringify(data);
+                        }
+                    }
+                ]
+            });
+            console.log('WebMCP tools successfully registered');
+        } catch (e) {
+            console.error('Failed to register WebMCP tools:', e);
+        }
+    }
 });

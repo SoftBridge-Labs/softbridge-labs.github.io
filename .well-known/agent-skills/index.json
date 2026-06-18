@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "webmcp-tools",
+      "type": "skill-md",
+      "description": "Exposes WebMCP capabilities to query products, devtools, and careers at SoftBridge Labs.",
+      "url": "https://softbridgelabs.in/.well-known/agent-skills/webmcp-tools/SKILL.md",
+      "sha256": "40e220c9d75b8a765f1f4778c5e10f75990c8ed559267fc151ae164104798a45"
+    }
+  ]
+}

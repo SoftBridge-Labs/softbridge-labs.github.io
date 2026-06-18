@@ -1,0 +1,49 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://softbridgelabs.in/data/products.json",
+      "service-desc": [
+        {
+          "href": "https://softbridgelabs.in/data/products.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://softbridgelabs.in/products/",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://softbridgelabs.in/data/devtools.json",
+      "service-desc": [
+        {
+          "href": "https://softbridgelabs.in/data/devtools.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://softbridgelabs.in/devtools/",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://softbridgelabs.in/data/jobs.json",
+      "service-desc": [
+        {
+          "href": "https://softbridgelabs.in/data/jobs.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://softbridgelabs.in/careers/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "protocolVersion": "2025-11-25",
+  "serverInfo": {
+    "name": "softbridge-labs-discovery",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://softbridgelabs.in/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "list": [
+        {
+          "name": "get_products_list",
+          "description": "Exposes the catalog of SoftBridge Labs software and applications."
+        },
+        {
+          "name": "get_devtools_list",
+          "description": "Exposes developer utility software catalog."
+        },
+        {
+          "name": "get_job_openings",
+          "description": "Exposes active hiring listings for careers at SoftBridge Labs."
+        }
+      ]
+    }
+  },
+  "authentication": {
+    "required": false
+  }
+}
