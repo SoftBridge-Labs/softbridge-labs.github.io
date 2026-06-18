@@ -2491,3 +2491,108 @@ section {
     padding: 12px 28px;
     font-size: 0.95rem;
 }
+
+/* =============================================
+   CLIENT WORK SECTION
+   ============================================= */
+.client-work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.work-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 480px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
+    border-color: var(--accent);
+}
+
+.work-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.work-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+}
+
+.work-icon .material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+.work-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+}
+
+.work-client {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: -8px;
+}
+
+.work-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.work-links {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+/* LinkedIn Embed styling */
+.work-card.embed-card {
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+}
+
+.linkedin-embed-container {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.linkedin-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border: none;
+}

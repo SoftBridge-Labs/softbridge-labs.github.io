@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '/about': 'nav-about',
             '/services': 'nav-services',
             '/products': 'nav-products',
+            '/workspace': 'nav-workspace',
             '/devtools': 'nav-devtools',
             '/blog': 'nav-blog',
             '/careers': 'nav-careers'
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '/about': 'side-about',
             '/services': 'side-services',
             '/products': 'side-products',
+            '/workspace': 'side-workspace',
             '/devtools': 'side-devtools',
             '/blog': 'side-blog',
             '/careers': 'side-careers',

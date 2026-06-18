@@ -1,5 +1,14 @@
 [
   {
+    "id": "aiforms",
+    "name": "AI Forms",
+    "icon": "/assets/logo/forms.png",
+    "url": "https://forms.softbridgelabs.in/",
+    "description": "Smart Forms & Surveys for Modern Workspaces",
+    "long_description": "Create powerful surveys, questionnaires, and feedback forms with ease. Design professional forms, collect responses in real time, and gain actionable insights through advanced analytics.",
+    "beta": true
+  },
+  {
     "id": "texticon",
     "name": "SoftBridge Texts",
     "icon": "/assets/logo/texts.png",

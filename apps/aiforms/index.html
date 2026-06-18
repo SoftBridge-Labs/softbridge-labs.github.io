@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/components/seo.js"
+        data-title="AI Forms | SoftBridge Labs — Smart Forms & Surveys"
+        data-desc="Create powerful surveys, questionnaires, and feedback forms with ease. Design professional forms, collect responses in real time, and gain insights with advanced AI."
+        data-url="/apps/aiforms/"
+        data-type="website"
+        data-image="/assets/logo/forms.png"
+        data-keywords="AI Forms, smart forms, AI surveys, questionnaire creator, form builder, SoftBridge Labs forms, Flutter forms, online survey tool"
+    ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI Forms",
+      "alternateName": "AI Forms by SoftBridge Labs",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, Web",
+      "url": "https://softbridgelabs.in/apps/aiforms/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=in.softbridgelabs.forms",
+      "description": "Create powerful surveys, questionnaires, and feedback forms with ease. Design professional forms, collect responses in real time, and gain insights with advanced AI.",
+      "author": { "@type": "Organization", "name": "SoftBridge Labs", "url": "https://softbridgelabs.in" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+      "screenshot": "https://softbridgelabs.in/assets/logo/forms.png"
+    }
+    </script>
+    <style>
+        .app-hero {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            padding: 0 24px;
+        }
+        .app-content-container {
+            max-width: 1000px;
+            margin: -60px auto 100px;
+            background: var(--bg);
+            border-radius: 32px;
+            padding: 64px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+        }
+        .app-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        .app-large-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            background: white;
+            padding: 8px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 36px 0;
+        }
+        .feature-item {
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .feature-item h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .feature-item p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .beta-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            margin-top: 56px;
+        }
+        .beta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid #fde68a;
+        }
+        [data-theme="dark"] .beta-badge {
+            background: #451a03;
+            color: #fbbf24;
+            border-color: #78350f;
+        }
+        .step-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 16px;
+        }
+        .step-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .join-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .bullet-list {
+            margin: 20px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .bullet-list li {
+            margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+            .app-header-flex { flex-direction: column; text-align: center; gap: 16px; }
+            .app-content-container { padding: 32px 20px; margin-top: -40px; border-radius: 24px; }
+            .beta-card { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="app-hero">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/app.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/app.jpg" alt="AI Forms" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <p class="badge">BETA TESTING</p>
+            <h1 class="hero-title">AI <span style="color:var(--accent);">Forms</span></h1>
+        </div>
+    </section>
+
+    <main class="app-content-container">
+        <div class="app-header-flex">
+            <img src="/assets/logo/forms.png" class="app-large-icon" alt="AI Forms Logo" onerror="this.src='/assets/favicon.ico'">
+            <div>
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                    <h2 style="font-size:2rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin:0;">AI Forms</h2>
+                    <span class="beta-badge" style="margin:0;">Beta</span>
+                </div>
+                <p style="font-size:1rem;color:var(--text-muted);margin:0;">Smart Forms & Surveys for Modern Workspaces</p>
+                <p style="font-size:0.8rem;color:var(--text-muted);margin-top:4px;">by SoftBridge Labs · Android + Web</p>
+            </div>
+        </div>
+
+        <p style="font-size:1.1rem;color:var(--text-muted);line-height:1.8;margin-bottom:36px;">Create powerful surveys, questionnaires, and feedback forms with ease. Design professional forms, collect responses in real time, and gain actionable insights through advanced analytics.</p>
+
+        <h3 style="font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:20px;">Why AI Forms?</h3>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">psychology</span>
+                <h3>AI-Powered Generation</h3>
+                <p>Turn simple text prompts into complete form structures instantly. Save time and build professional surveys with the power of advanced AI.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">layers</span>
+                <h3>Multi-Page Forms</h3>
+                <p>Organize complex surveys into structured sections using page breaks and intuitive navigation for a better respondent experience.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">alt_route</span>
+                <h3>Conditional Logic</h3>
+                <p>Create dynamic experiences with conditional show/hide rules. Display relevant questions based on previous responses and improve completion rates.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">monitoring</span>
+                <h3>Real-Time Analytics</h3>
+                <p>Monitor responses as they arrive. View distributions, response trends, NPS scores, and detailed statistics to make data-driven decisions.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">groups</span>
+                <h3>Built for Teams</h3>
+                <p>Everything you need to create engaging forms, automate workflows, and gather meaningful feedback from employees, customers, and stakeholders.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-symbols-outlined feature-icon">vpn_key</span>
+                <h3>Unified Account</h3>
+                <p>Access all SoftBridge Lab services with a single account. Enjoy seamless authentication and a consistent experience across the ecosystem.</p>
+            </div>
+        </div>
+
+        <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:32px;margin:36px 0;">
+            <h3 style="font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:12px;">Key Features</h3>
+            <ul class="bullet-list">
+                <li>• AI-generated forms and surveys</li>
+                <li>• Multi-page questionnaire support</li>
+                <li>• Conditional branching and logic rules</li>
+                <li>• Real-time response collection</li>
+                <li>• Advanced analytics and reporting</li>
+                <li>• NPS and satisfaction tracking</li>
+                <li>• Secure cloud-based data management</li>
+                <li>• Unified SoftBridge Lab account integration</li>
+            </ul>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin-top:16px;">Whether you're conducting employee engagement surveys, customer feedback programs, research studies, or internal assessments, AI Forms provides the tools you need to collect better data and make informed decisions.</p>
+        </div>
+
+        <!-- Beta Testing Section -->
+        <div class="beta-card">
+            <span class="beta-badge">Beta Testing Open</span>
+            <h2 style="font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:12px;">Join the Open Beta</h2>
+            <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:28px;">AI Forms is currently undergoing beta testing. Help us shape the future of smart workspaces by testing our app and sharing your experience.</p>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">group_add</span>
+                    Step 1 — Join the Google Group
+                </h4>
+                <p>Join our official Google Group to gain authorization to download the beta application. This step links your Google account to the tester group.</p>
+                <div class="join-actions">
+                    <a href="https://groups.google.com/g/softbridge-labs" target="_blank" rel="noopener" class="btn-black">Join Google Group</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">download</span>
+                    Step 2 — Install & Launch
+                </h4>
+                <p>Once you are in the tester community, you can access the Android app and the Web client via the secured links below.</p>
+                <div class="join-actions">
+                    <a href="https://play.google.com/store/apps/details?id=in.softbridgelabs.forms" target="_blank" rel="noopener" class="btn-black">Get on Play Store</a>
+                    <a href="https://forms.softbridgelabs.in/" target="_blank" rel="noopener" class="btn-white">Open Web Version</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4>
+                    <span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--accent);">rate_review</span>
+                    Step 3 — Report Issues & Ideas
+                </h4>
+                <p>Found a bug or have a feature suggestion? Let us know. Your reports help us build a more solid experience before public release.</p>
+                <div class="join-actions">
+                    <a href="mailto:support@softbridgelabs.in?subject=AI Forms Beta Feedback&body=App version:%0ADevice:%0AFeedback:%0A" class="btn-white">Send Feedback</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:48px;text-align:center;">
+            <a href="/apps/" class="btn-white">View All Apps</a>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.SBL && window.SBL.breadcrumb([
+                { name: 'Home', url: '/' },
+                { name: 'Apps', url: '/apps/' },
+                { name: 'AI Forms', url: '/apps/aiforms/' }
+            ]);
+        });
+    </script>
+</body>
+</html>
