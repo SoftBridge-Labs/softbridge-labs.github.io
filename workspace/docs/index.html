@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NZGDGVDB');</script>
+    <!-- End Google Tag Manager -->
+
+    <script src="/components/seo.js"
+        data-title="Workspace API Documentation | SoftBridge Labs"
+        data-desc="Comprehensive API guides for SoftBridge Workspace suite apps including Bookmarks, Docs, Tasks & Projects, and Whiteboard & Draw."
+        data-url="/workspace/docs/"
+        data-type="website"
+        data-keywords="SoftBridge Workspace API, developer documentation, Bookmarks API, Documents API, Tasks API, Whiteboard API"
+    ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Load GSAP & ScrollTrigger from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* Modern developer portal styles matching SoftBridge design system */
+        .docs-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* Sidebar Tabs styling */
+        .docs-sidebar {
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 16px;
+            border-right: 1px solid var(--border);
+        }
+
+        @media (max-width: 992px) {
+            .docs-sidebar {
+                position: relative;
+                top: 0;
+                height: auto;
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 16px;
+                padding-right: 0;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        .tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .tab-btn.active {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: rgba(99, 102, 241, 0.15);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.04);
+        }
+
+        .tab-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Content Area */
+        .docs-content-panel {
+            min-height: 500px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Documentation UI Components */
+        .api-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .api-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        /* Limits Box */
+        .limits-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .limit-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .limit-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .limit-value {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .limit-value.free {
+            color: #d97706;
+        }
+
+        .limit-value.premium {
+            color: #10b981;
+        }
+
+        /* Authentication Panel */
+        .auth-panel {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 40px;
+        }
+
+        .auth-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Endpoints section */
+        .endpoint-section {
+            margin-bottom: 48px;
+        }
+
+        .endpoint-card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            background: var(--bg);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: border-color 0.2s ease;
+        }
+
+        .endpoint-card:hover {
+            border-color: var(--accent);
+        }
+
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .method-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .method-badge.post {
+            background: #dcfce7;
+            color: #15803d;
+        }
+        [data-theme="dark"] .method-badge.post {
+            background: #14532d;
+            color: #4ade80;
+        }
+
+        .method-badge.get {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        [data-theme="dark"] .method-badge.get {
+            background: #1e3a8a;
+            color: #60a5fa;
+        }
+
+        .method-badge.put {
+            background: #fef3c7;
+            color: #b45309;
+        }
+        [data-theme="dark"] .method-badge.put {
+            background: #78350f;
+            color: #fbbf24;
+        }
+
+        .method-badge.delete {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+        [data-theme="dark"] .method-badge.delete {
+            background: #7f1d1d;
+            color: #fca5a5;
+        }
+
+        .endpoint-path {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .endpoint-name {
+            margin-left: auto;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .endpoint-body {
+            padding: 24px;
+        }
+
+        /* Code Block formatting */
+        pre {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 12px 0 20px 0;
+            border: 1px solid #334155;
+            position: relative;
+        }
+
+        .code-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 16px;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #94a3b8;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+
+        /* Info boxes */
+        .info-note {
+            background: var(--accent-light);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZGDGVDB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="header-placeholder"></div>
+
+    <section class="hero hero-small">
+        <div class="hero-bg-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/backgrounds/videos/devtools.mp4" type="video/mp4">
+            </video>
+            <img src="/assets/backgrounds/devtools.jpg" alt="Dev Tools Hero" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <div class="badge">DEVELOPER CENTER</div>
+            <h1 class="hero-title">Workspace <span class="gradient">API Reference</span></h1>
+            <p class="hero-subtitle" style="margin-top: 16px;">Detailed integration schemas and API controls for SoftBridge Workspace products.</p>
+        </div>
+    </section>
+
+    <main style="padding: 60px 24px; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="docs-container">
+            <!-- Sidebar Navigation Tabs -->
+            <aside class="docs-sidebar">
+                <button class="tab-btn active" data-tab="bookmarks">
+                    <span class="material-symbols-outlined tab-icon">bookmark</span>
+                    <span>Bookmarks API</span>
+                </button>
+                <button class="tab-btn" data-tab="docs">
+                    <span class="material-symbols-outlined tab-icon">description</span>
+                    <span>Docs API</span>
+                </button>
+                <button class="tab-btn" data-tab="tasks">
+                    <span class="material-symbols-outlined tab-icon">assignment</span>
+                    <span>Tasks & Projects API</span>
+                </button>
+                <button class="tab-btn" data-tab="whiteboard">
+                    <span class="material-symbols-outlined tab-icon">draw</span>
+                    <span>Whiteboard API</span>
+                </button>
+            </aside>
+
+            <!-- Main Content Area -->
+            <section class="docs-content-panel">
+                
+                <!-- TAB 1: BOOKMARKS API -->
+                <div class="tab-content active" id="tab-bookmarks">
+                    <h2 class="api-title">Workspace Bookmarks API</h2>
+                    <p class="api-desc">SoftBridge Workspace Bookmarks provides link organization, cataloging, and quick-access directory management for teams and individuals. Bookmarks are interconnected with documents and tasks.</p>
+                    
+                    <div class="limits-box">
+                        <div class="limit-card">
+                            <span class="limit-label">Free Tier Limit</span>
+                            <span class="limit-value free">10 bookmarks total</span>
+                        </div>
+                        <div class="limit-card" style="border-left: 1px solid var(--border); padding-left: 20px;">
+                            <span class="limit-label">Premium Tier Limit</span>
+                            <span class="limit-value premium">Unlimited</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-panel">
+                        <h4 class="auth-title">Authentication Required</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px;">Pass the Firebase ID Token in the <code>Authorization</code> header.</p>
+                        <pre>Authorization: Bearer &lt;firebase_id_token&gt;<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                    </div>
+
+                    <h3 style="margin-bottom: 20px;">Endpoints</h3>
+
+                    <!-- Endpoint 1 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/bookmarks</span>
+                            <span class="endpoint-name">Create Bookmark</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Creates a new bookmark. Bookmarks can be linked to other workspace documents or tasks.</p>
+                            
+                            <div class="code-label">Request Body (JSON)</div>
+                            <pre>{
+  "title": "MDN Web Docs",
+  "url": "https://developer.mozilla.org",
+  "description": "Resources for developers, by developers.",
+  "tags": ["documentation", "web", "javascript"],
+  "category": "Development",
+  "linkedDocs": [],
+  "linkedTasks": [],
+  "isPublic": false
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+                            <div class="code-label">Response (201 Created)</div>
+                            <pre>{
+  "success": true,
+  "message": "Bookmark created successfully",
+  "data": {
+    "_id": "64d0e1...",
+    "uid": "user_uid_123",
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org",
+    "description": "Resources for developers, by developers.",
+    "tags": ["documentation", "web", "javascript"],
+    "category": "Development",
+    "linkedDocs": [],
+    "linkedTasks": [],
+    "isPublic": false,
+    "createdAt": "2026-06-28T19:00:00.000Z"
+  }
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 2 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/bookmarks</span>
+                            <span class="endpoint-name">List Bookmarks</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Lists all bookmarks owned by the authenticated user.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 3 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/bookmarks/:id</span>
+                            <span class="endpoint-name">Get Bookmark Details</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Retrieves details of a specific bookmark by its ID.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 4 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge put">PUT</span>
+                            <span class="endpoint-path">/workspace/bookmarks/:id</span>
+                            <span class="endpoint-name">Update Bookmark</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Updates details of an existing bookmark.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 5 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge delete">DELETE</span>
+                            <span class="endpoint-path">/workspace/bookmarks/:id</span>
+                            <span class="endpoint-name">Delete Bookmark</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Removes a bookmark from the workspace.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TAB 2: DOCS API -->
+                <div class="tab-content" id="tab-docs">
+                    <h2 class="api-title">Workspace Docs API</h2>
+                    <p class="api-desc">SoftBridge Workspace Docs is a collaborative rich-text / markdown document editor application. It allows users to write personal journals, collaborate on meeting notes, and structure enterprise wikis. Docs are interconnected with sheets, forms, tasks, bookmarks, whiteboards, and calendar events.</p>
+                    
+                    <div class="limits-box">
+                        <div class="limit-card">
+                            <span class="limit-label">Free Tier Limit</span>
+                            <span class="limit-value free">3 documents total</span>
+                        </div>
+                        <div class="limit-card" style="border-left: 1px solid var(--border); padding-left: 20px;">
+                            <span class="limit-label">Premium Tier Limit</span>
+                            <span class="limit-value premium">Unlimited</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-panel">
+                        <h4 class="auth-title">Authentication Required</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px;">Pass the Firebase ID Token in the <code>Authorization</code> header.</p>
+                        <pre>Authorization: Bearer &lt;firebase_id_token&gt;<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                    </div>
+
+                    <h3 style="margin-bottom: 20px;">Endpoints</h3>
+
+                    <!-- Endpoint 1 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/docs</span>
+                            <span class="endpoint-name">Create Document</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Creates a new document with optional metadata and workspace resource links.</p>
+                            
+                            <div class="code-label">Request Body (JSON)</div>
+                            <pre>{
+  "title": "Project Kickoff Notes",
+  "content": "# Kickoff meeting\nDiscussion on SoftBridge Workspace components.",
+  "linkedSheets": [],
+  "linkedForms": [],
+  "linkedTasks": [],
+  "linkedEvents": ["evt_12345"],
+  "collaborators": [
+    {
+      "uid": "collab_uid_abc",
+      "email": "collaborator@softbridge.com",
+      "role": "editor"
+    }
+  ],
+  "isPublic": false
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+                            <div class="code-label">Response (201 Created)</div>
+                            <pre>{
+  "success": true,
+  "message": "Document created successfully",
+  "data": {
+    "_id": "64d0a1...",
+    "uid": "user_uid_123",
+    "title": "Project Kickoff Notes",
+    "content": "# Kickoff meeting...",
+    "linkedSheets": [],
+    "linkedForms": [],
+    "linkedTasks": [],
+    "linkedEvents": ["evt_12345"],
+    "collaborators": [...],
+    "isPublic": false,
+    "createdAt": "2026-06-28T19:00:00.000Z",
+    "updatedAt": "2026-06-28T19:00:00.000Z"
+  }
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 2 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/docs</span>
+                            <span class="endpoint-name">List Documents</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Lists all documents owned by the user or where the user is a collaborator.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 3 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/docs/:id</span>
+                            <span class="endpoint-name">Get Document Details</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Retrieves details of a specific document. Accessible if public or if the requester has owner/collaborator privileges.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 4 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge put">PUT</span>
+                            <span class="endpoint-path">/workspace/docs/:id</span>
+                            <span class="endpoint-name">Update Document</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Updates the content, title, or settings of an existing document.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 5 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge delete">DELETE</span>
+                            <span class="endpoint-path">/workspace/docs/:id</span>
+                            <span class="endpoint-name">Delete Document</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Deletes a document. Only the owner can delete.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 6 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/docs/:id/link</span>
+                            <span class="endpoint-name">Manage Connections</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Explicitly link or unlink documents to other workspace resources.</p>
+                            
+                            <div class="code-label">Request Body</div>
+                            <pre>{
+  "targetType": "sheet", 
+  "targetId": "64d0b2...", 
+  "action": "add" 
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                            
+                            <div class="info-note">
+                                <strong>Note:</strong> <code>targetType</code> can be <code>sheet</code>, <code>form</code>, <code>task</code>, or <code>event</code>. <code>action</code> can be <code>add</code> or <code>remove</code>.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TAB 3: TASKS & PROJECTS API -->
+                <div class="tab-content" id="tab-tasks">
+                    <h2 class="api-title">Workspace Tasks & Projects API</h2>
+                    <p class="api-desc">SoftBridge Workspace Tasks provides project planning, board management, and task scheduling tools. It helps B2B teams manage development sprints and B2C users manage daily personal task lists. Tasks are interconnected with sheets, forms, docs, bookmarks, whiteboards, and calendars.</p>
+                    
+                    <div class="limits-box">
+                        <div class="limit-card">
+                            <span class="limit-label">Free Tier Limit</span>
+                            <span class="limit-value free">10 tasks total</span>
+                        </div>
+                        <div class="limit-card" style="border-left: 1px solid var(--border); padding-left: 20px;">
+                            <span class="limit-label">Premium Tier Limit</span>
+                            <span class="limit-value premium">Unlimited</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-panel">
+                        <h4 class="auth-title">Authentication Required</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px;">Pass the Firebase ID Token in the <code>Authorization</code> header.</p>
+                        <pre>Authorization: Bearer &lt;firebase_id_token&gt;<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                    </div>
+
+                    <h3 style="margin-bottom: 20px;">Endpoints</h3>
+
+                    <!-- Endpoint 1 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/tasks</span>
+                            <span class="endpoint-name">Create Task</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Creates a new task in a project workspace.</p>
+                            
+                            <div class="code-label">Request Body (JSON)</div>
+                            <pre>{
+  "projectId": "sb-workspace-launch",
+  "projectName": "SB Workspace Launch Sprint",
+  "title": "Implement Docs and Tasks Routers",
+  "description": "Create the new endpoints and models for interconnected apps.",
+  "status": "in_progress",
+  "priority": "high",
+  "dueDate": "2026-07-05T18:00:00.000Z",
+  "assignees": [
+    {
+      "uid": "user_uid_123",
+      "email": "developer@softbridge.com"
+    }
+  ]
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+                            <div class="code-label">Response (201 Created)</div>
+                            <pre>{
+  "success": true,
+  "message": "Task created successfully",
+  "data": {
+    "_id": "64d0c1...",
+    "uid": "creator_uid",
+    "projectId": "sb-workspace-launch",
+    "projectName": "SB Workspace Launch Sprint",
+    "title": "Implement Docs and Tasks Routers",
+    "status": "in_progress",
+    "priority": "high",
+    "dueDate": "2026-07-05T18:00:00.000Z",
+    "assignees": [...],
+    "linkedDocs": [],
+    "linkedSheets": [],
+    "linkedForms": [],
+    "linkedEvents": [],
+    "createdAt": "2026-06-28T19:00:00.000Z"
+  }
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 2 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/tasks</span>
+                            <span class="endpoint-name">List Tasks</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Lists all tasks. Supports filtering via optional query parameters.</p>
+                            
+                            <div class="code-label">Query Parameters (Optional)</div>
+                            <ul style="padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                                <li><code>projectId</code>: Filter tasks by project (e.g. <code>?projectId=sb-workspace-launch</code>)</li>
+                                <li><code>status</code>: Filter by status (<code>todo</code>, <code>in_progress</code>, <code>completed</code>, <code>archived</code>)</li>
+                                <li><code>priority</code>: Filter by priority (<code>low</code>, <code>medium</code>, <code>high</code>)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 3 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/tasks/:id</span>
+                            <span class="endpoint-name">Get Task Details</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Retrieves details of a specific task.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 4 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge put">PUT</span>
+                            <span class="endpoint-path">/workspace/tasks/:id</span>
+                            <span class="endpoint-name">Update Task</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Updates fields of an existing task.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 5 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge delete">DELETE</span>
+                            <span class="endpoint-path">/workspace/tasks/:id</span>
+                            <span class="endpoint-name">Delete Task</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Deletes a task from the board.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 6 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/tasks/:id/link</span>
+                            <span class="endpoint-name">Manage Connections</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Link or unlink a task to files, documents, sheets, forms, or calendar events.</p>
+                            
+                            <div class="code-label">Request Body</div>
+                            <pre>{
+  "targetType": "doc",
+  "targetId": "64d0a1...",
+  "action": "add"
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                            
+                            <div class="info-note">
+                                <strong>Note:</strong> <code>targetType</code> can be <code>doc</code>, <code>sheet</code>, <code>form</code>, <code>event</code>, or <code>file</code>. <code>action</code> can be <code>add</code> or <code>remove</code>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Automation Section -->
+                    <div class="bento-card" style="padding: 32px; border-color: var(--accent); background: var(--card-bg); margin-top: 40px;">
+                        <h3 style="margin-bottom: 12px;">Form Submission Task Automation</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Workspace Forms can be configured to automatically spawn tasks when a user submits a response. To enable this, configure the <code>taskIntegration</code> object on your form:</p>
+                        
+                        <pre>{
+  "taskIntegration": {
+    "enabled": true,
+    "projectId": "lead-generation-project",
+    "projectName": "Marketing Leads",
+    "taskTitlePrefix": "New Response from"
+  }
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 12px;">When submitted, a task will automatically be created containing the full response breakdown in its description.</p>
+                    </div>
+
+                </div>
+
+                <!-- TAB 4: WHITEBOARD API -->
+                <div class="tab-content" id="tab-whiteboard">
+                    <h2 class="api-title">Workspace Whiteboard & Draw API</h2>
+                    <p class="api-desc">SoftBridge Workspace Whiteboard provides element-based layout drawing, SVG paths representation, and flow chart sketching for B2B collaboration and B2C visual drafting. Whiteboards are interconnected with documents and tasks.</p>
+                    
+                    <div class="limits-box">
+                        <div class="limit-card">
+                            <span class="limit-label">Free Tier Limit</span>
+                            <span class="limit-value free">1 whiteboard total</span>
+                        </div>
+                        <div class="limit-card" style="border-left: 1px solid var(--border); padding-left: 20px;">
+                            <span class="limit-label">Premium Tier Limit</span>
+                            <span class="limit-value premium">Unlimited</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-panel">
+                        <h4 class="auth-title">Authentication Required</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px;">Pass the Firebase ID Token in the <code>Authorization</code> header.</p>
+                        <pre>Authorization: Bearer &lt;firebase_id_token&gt;<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                    </div>
+
+                    <h3 style="margin-bottom: 20px;">Endpoints</h3>
+
+                    <!-- Endpoint 1 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge post">POST</span>
+                            <span class="endpoint-path">/workspace/whiteboard</span>
+                            <span class="endpoint-name">Create Whiteboard</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px;">Creates a new collaborative drawing whiteboard.</p>
+                            
+                            <div class="code-label">Request Body (JSON)</div>
+                            <pre>{
+  "title": "System Architecture Draft",
+  "elements": [
+    {
+      "id": "node-1",
+      "type": "rectangle",
+      "x": 100,
+      "y": 150,
+      "width": 120,
+      "height": 60,
+      "stroke": "#000000",
+      "fill": "#ffffff",
+      "text": "API Server"
+    }
+  ],
+  "collaborators": [
+    {
+      "uid": "collab_uid_xyz",
+      "email": "architect@softbridge.com",
+      "role": "editor"
+    }
+  ],
+  "isPublic": false
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+                            <div class="code-label">Response (201 Created)</div>
+                            <pre>{
+  "success": true,
+  "message": "Whiteboard created successfully",
+  "data": {
+    "_id": "64d0f1...",
+    "uid": "user_uid_123",
+    "title": "System Architecture Draft",
+    "elements": [...],
+    "collaborators": [...],
+    "isPublic": false,
+    "createdAt": "2026-06-28T19:00:00.000Z"
+  }
+}<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 2 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/whiteboard</span>
+                            <span class="endpoint-name">List Whiteboards</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Lists all whiteboards owned by the user or where the user is a collaborator.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 3 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge get">GET</span>
+                            <span class="endpoint-path">/workspace/whiteboard/:id</span>
+                            <span class="endpoint-name">Get Whiteboard Details</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Retrieves element details of a specific whiteboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 4 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge put">PUT</span>
+                            <span class="endpoint-path">/workspace/whiteboard/:id</span>
+                            <span class="endpoint-name">Update Whiteboard</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Updates elements, layouts, collaborators or settings of a whiteboard.</p>
+                        </div>
+                    </div>
+
+                    <!-- Endpoint 5 -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="method-badge delete">DELETE</span>
+                            <span class="endpoint-path">/workspace/whiteboard/:id</span>
+                            <span class="endpoint-name">Delete Whiteboard</span>
+                        </div>
+                        <div class="endpoint-body">
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Permanently deletes a whiteboard.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register breadcrumbs
+            window.SBL && window.SBL.breadcrumb([
+                { name: 'Home', url: '/' },
+                { name: 'Workspace', url: '/workspace/' },
+                { name: 'API Docs', url: '/workspace/docs/' }
+            ]);
+
+            // Tab logic
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    // Update active state of buttons
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Update active state of content panels
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `tab-${tabId}`) {
+                            content.classList.add('active');
+                        }
+                    });
+
+                    // Scroll to top of content area on mobile
+                    if (window.innerWidth <= 992) {
+                        document.querySelector('.docs-content-panel').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // GSAP Animations
+            gsap.from(".docs-sidebar", {
+                x: -30,
+                opacity: 0,
+                duration: 0.6,
+                ease: "power2.out"
+            });
+
+            gsap.from(".docs-content-panel", {
+                y: 20,
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.2,
+                ease: "power2.out"
+            });
+        });
+
+        // Copy Code utility function
+        function copyCode(button) {
+            const preElement = button.parentElement;
+            const codeText = preElement.innerText.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(codeText).then(() => {
+                const originalText = button.innerText;
+                button.innerText = 'Copied!';
+                button.style.background = '#10b981';
+                button.style.color = '#ffffff';
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.background = '';
+                    button.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

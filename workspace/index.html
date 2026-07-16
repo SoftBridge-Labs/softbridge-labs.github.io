@@ -228,13 +228,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="badge" id="gsap-badge">SOFTBRIDGE 365 ECOSYSTEM</div>
             <h1 class="hero-title" id="gsap-title">Empower Your <span class="gradient">Workspace</span></h1>
             <p class="hero-subtitle" id="gsap-subtitle" style="margin-top: 16px;">Elevate productivity, streamline surveys, build web modules on the go, and secure your identity under a single unified environment.</p>
+            <div class="hero-btns" id="gsap-btns" style="margin-top: 24px; display: flex; gap: 16px; justify-content: center; width: 100%;">
+                <a href="#apps-section" class="btn-black">View Apps</a>
+                <a href="/workspace/docs/" class="btn-white">API Reference</a>
+            </div>
         </div>
     </section>
 
     <main style="padding: 60px 24px; max-width: 1200px; margin: 0 auto;">
         
         <!-- App Listing Section -->
-        <section style="margin-bottom: 80px;">
+        <section id="apps-section" style="margin-bottom: 80px;">
             <h2 class="section-title" id="gsap-apps-title">Workspace Applications</h2>
             <div class="workspace-app-grid">
                 
@@ -411,7 +415,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const tlHero = gsap.timeline();
             tlHero.from("#gsap-badge", { y: -20, opacity: 0, duration: 0.6, ease: "power2.out" })
                   .from("#gsap-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
-                  .from("#gsap-subtitle", { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
+                  .from("#gsap-subtitle", { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
+                  .from("#gsap-btns", { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6");
 
             // 2. Apps Catalog Cards Slide-in & Fade
             gsap.from(".gsap-reveal-card", {
